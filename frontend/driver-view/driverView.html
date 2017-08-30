@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>driver view</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="header-fixed.css">
+    <link rel="stylesheet" href="demo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+
+    <div class="container-fluid">
+        <header class="header-fixed">
+
+            <div class="header-limiter">
+
+                <h1><a href="#">Company<span>logo</span></a></h1>
+
+                <div class="schedule">
+                    Schedule|Thurs March 31st
+                </div>
+
+                <span class="glyphicon glyphicon-calendar pull-right">  </span>
+
+
+            </div>
+
+        </header>
+
+        <div class ="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-2">
+                    <div>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="profile"><img src ="images/driver.jpg" class="img-circle " width="85" height="85"></li>
+                            <li class="active"><a href="#">Order List</a> </li>
+                            <li><a href="#">My Profile</a> </li>
+                            <li><a href="#">Messages</a> </li>
+                            <li><a href="#">Logout</a> </li>
+                        </ul>
+
+                    </div>`
+                </div>
+
+                <div class="col-lg-10">
+                    <div class="main">
+                        <table class="table" id="myTable">
+                            <thead>
+                            <tr>
+                                <th>OrderID</th>
+                                <th align="center">Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Road Trans</td>
+                                <td align="center"><a href="#">Picked up</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Andersons</td>
+                                <td align="center"><a href="#">Picked up</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Wallan Eng</td>
+                                <td align="center"><a href="#">New</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Strategic Labour</td>
+                                <td align="center"><a href="#">New</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Note Printing</td>
+                                <td align="center"><a href="#">New</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Direct Freight</td>
+                                <td align="center"><a href="#">New</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Vitale</td>
+                                <td align="center"><a href="#">New</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td> XL Concrete</td>
+                                <td align="center"><a href="#">New</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Airport Motel</td>
+                                <td align="center"><a href="#">New</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>M.A.C.S</td>
+                                <td align="center"><a href="#">New</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <input type="button" name="Submit" value="Insert New" onclick="insert_row()"/>
+            <input type="button" name="Submit" value="Delete Order" onclick="delete_row()"/>
+        </div>
+
+
+
+        <div class="footer">
+
+        </div>
+        <script type="text/javascript">
+            var table = document.getElementById("myTable");
+            
+            function insert_row() {
+                var thisRow = table.insertRow(1);
+                var thiscell1 = thisRow.insertCell(0);
+                thiscell1.align ="left";
+                thiscell1.innerHTML = "New Order";
+                var thiscell2 = thisRow.insertCell(1);
+                thiscell2.innerHTML = "New Status";
+                thiscell2.align ="center";
+
+            }
+            
+            function delete_row() {
+                table.deleteRow(1);
+            }
+
+        </script>
+
+    </div>
+
+
+
+</body>
+</html>
