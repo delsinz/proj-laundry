@@ -19,11 +19,22 @@ namespace Laundry_Platypus
         {
             _system = system;
         }
-
+        public void login(string userid, string passwd)
+        {
+            person=_system.GetUser(userid, passwd);
+        }
         public IEnumerable<Order> GetAllOrder()
         {
-            return _system.GetAllOrders();
+            //return _system.GetAllOrders();
+            return _system.GetAllOrders(person);
         }
+        public IEnumerable<Order> GetAllOrder(string userid, string passwd)
+        {
+            person = _system.GetUser(userid, passwd);
+            //return _system.GetAllOrders();
+            return _system.GetAllOrders(person);
+        }
+
     }
     
 }
