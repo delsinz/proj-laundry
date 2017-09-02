@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Laundry_Platypus;
 using MySql.Data.MySqlClient;
 
-namespace Laundry_Platypus
+namespace Laundry_Playtus
 {
     public partial class login : System.Web.UI.Page
     {
@@ -18,6 +18,7 @@ namespace Laundry_Platypus
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            
             if (userid.Text == "" || passwd.Text == "")
             {
 
@@ -74,5 +75,7 @@ namespace Laundry_Platypus
                 }
             }
         }
+
+       
     }
 }

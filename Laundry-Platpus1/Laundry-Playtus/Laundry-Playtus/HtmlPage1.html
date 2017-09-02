@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>ASP.NET SignalR DriverOverview Sample</h1>
+
+    <h2>Driver Order Table</h2>
+    <div id="orderTable">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>OrderID</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="loading">
+                    <td colspan="5">loading...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--Script references. -->
+    <!--Reference the jQuery library. -->
+    <script src="/Scripts/jquery-1.6.4.min.js"></script>
+    <script src="/Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="System.js"></script>
+</body>
+</html>

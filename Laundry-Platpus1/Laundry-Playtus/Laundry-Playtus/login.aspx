@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Laundry_Platypus.login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Laundry_Playtus.login" %>
 
 <!DOCTYPE html>
 
@@ -7,8 +7,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <title>Complete Workwear Login</title>
-    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'/>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,8 +22,7 @@
     </div>
     <div class="input-group">
         <span class="input-group-addon" id="basic-addon1">UserName</span>
-        <asp:TextBox ID="userid" runat="server" class="form-control" placeholder="userid"  aria-describedby="basic-addon1"></asp:TextBox>
-        
+        <asp:TextBox ID="userid" runat="server" class="form-control" placeholder="userid"  aria-describedby="basic-addon1" OnTextChanged="userid_TextChanged"></asp:TextBox>
     </div>
     <div class="input-group">
         <span class="input-group-addon" id="basic-addon2">Password</span>
@@ -49,3 +48,4 @@
     </form>
 </body>
 </html>
+
