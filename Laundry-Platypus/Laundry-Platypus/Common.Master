@@ -71,7 +71,7 @@
           <script src="/Scripts/jquery-1.6.4.min.js"></script>
         <script src="/Scripts/jquery.signalR-2.2.2.min.js"></script>
         <script src="/signalr/hubs"></script>
-        <script src="System.js"></script>
+        <script src="/Scripts/System.js"></script>
   <script>
   $(document).ready(function () {
     var trigger = $('.hamburger'),
