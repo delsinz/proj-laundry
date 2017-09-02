@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>driver view</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/packerOrderTable.css">
+    <script src="js/checkBox.js"></script>
+    <script src="js/count.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="25%"> Type </th>
+                            <th width="25%"> Picked Quantity </th>
+                            <th width="25%"> Clean Quantity </th>
+                            <th width="25%"> Check Box </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Coloured Suit</td>
+                            <td> 17 </td>
+                            <td>
+                                <div >
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-left-minus1 btn btn-danger btn-number"  data-type="minus" data-field="">
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                            </button>
+                                        </span>
+                                        <input type="text" id="quantity1" name="quantity" class="form-control input-number" value="0" min="1" max="100">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-right-plus1 btn btn-success btn-number" data-type="plus" data-field="">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary">Checked</button>
+                                        <input type="checkbox" class="hidden" />
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Coat </td>
+                            <td> 3 </td>
+                            <td>
+                                <div >
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-left-minus2 btn btn-danger btn-number"  data-type="minus" data-field="">
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                            </button>
+                                        </span>
+                                        <input type="text" id="quantity2" name="quantity" class="form-control input-number" value="0" min="1" max="100">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-right-plus2 btn btn-success btn-number" data-type="plus" data-field="">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary">Checked</button>
+                                        <input type="checkbox" class="hidden" />
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Gown </td>
+                            <td> 25 </td>
+                            <td>
+                                <div >
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-left-minus3 btn btn-danger btn-number"  data-type="minus" data-field="">
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                            </button>
+                                        </span>
+                                        <input type="text" id="quantity3" name="quantity" class="form-control input-number" value="0" min="1" max="100">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-right-plus3 btn btn-success btn-number" data-type="plus" data-field="">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary">Checked</button>
+                                        <input type="checkbox" class="hidden"/>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Shirt </td>
+                            <td> 9 </td>
+                            <td>
+                                <div >
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-left-minus4 btn btn-danger btn-number"  data-type="minus" data-field="">
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                            </button>
+                                        </span>
+                                        <input type="text" id="quantity4" name="quantity" class="form-control input-number" value="0" min="1" max="100">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-right-plus4 btn btn-success btn-number" data-type="plus" data-field="">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary">Checked</button>
+                                        <input type="checkbox" class="hidden" />
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Jumper </td>
+                            <td> 1 </td>
+                            <td>
+                                <div >
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-left-minus5 btn btn-danger btn-number"  data-type="minus" data-field="">
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                            </button>
+                                        </span>
+                                        <input type="text" id="quantity5" name="quantity" class="form-control input-number" value="0" min="1" max="100">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-right-plus5 btn btn-success btn-number" data-type="plus" data-field="">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary">Checked</button>
+                                        <input type="checkbox" class="hidden" />
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="well">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

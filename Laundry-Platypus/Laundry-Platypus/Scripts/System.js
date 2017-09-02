@@ -31,6 +31,7 @@ $(function () {
         clientHub.server.getAllOrder().done(function (order) {
             $orderTableBody.empty();
             $.each(order, function () {
+                // 
                 var order = formatOrder(this);
                 $orderTableBody.append(rowTemplate.supplant(order));
             });
@@ -46,7 +47,10 @@ $(function () {
             .replaceWith($row);
     }
 
+    //insert order 
+
     // Start the connection
     $.connection.hub.start().done(init);
+
 
 });
