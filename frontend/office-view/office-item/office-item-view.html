@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Complete Workwear</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>
+							Item ID
+						</th>
+						<th>
+							Name
+						</th>
+						<th>
+							Abbreviation
+						</th>
+						<th>
+							Action
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+                    <!-- Start table sample row -->
+					<tr>
+						<td>
+							1
+						</td>
+						<td>
+							Coat
+						</td>
+						<td>
+							CT
+						</td>
+						<td>
+							<a href="#modal-container-edit" role="button" class="btn btn-default" data-toggle="modal">Edit</a>
+                            <button role="button-remove" class="btn btn-danger">Remove</button>
+						</td>
+					</tr>
+                    <!-- End table sample row -->
+					<tr>
+						<td>
+							1
+						</td>
+						<td>
+							Pants
+						</td>
+						<td>
+							PT
+						</td>
+						<td>
+                            <a href="#modal-container-edit" role="button" class="btn btn-default" data-toggle="modal">Edit</a>
+                            <button role="button-remove" class="btn btn-danger">Remove</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							2
+						</td>
+						<td>
+							Shirt
+						</td>
+						<td>
+							SRT
+						</td>
+						<td>
+                            <a href="#modal-container-edit" role="button" class="btn btn-default" data-toggle="modal">Edit</a>
+                            <button role="button-remove" class="btn btn-danger">Remove</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							3
+						</td>
+						<td>
+							Shorts
+						</td>
+						<td>
+							STS
+						</td>
+						<td>
+                            <a href="#modal-container-edit" role="button" class="btn btn-default" data-toggle="modal">Edit</a>
+                            <button role="button-remove" class="btn btn-danger">Remove</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							4
+						</td>
+						<td>
+							Sheet
+						</td>
+						<td>
+							ST
+						</td>
+						<td>
+                            <a href="#modal-container-edit" role="button" class="btn btn-default" data-toggle="modal">Edit</a>
+                            <button role="button-remove" class="btn btn-danger">Remove</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<a id="modal-add" href="#modal-container-add" role="button" class="btn btn-primary" data-toggle="modal">Add Item</a>
+            <!-- Start Add Item Modal -->
+			<div class="modal fade" id="modal-container-add" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
+							<h4 class="modal-title" id="add-modal-label">
+								Add Item
+							</h4>
+						</div>
+						<div class="modal-body">
+                            <div class="form-group">
+                                <label for="name-add">Name:</label>
+                                <input type="text" class="form-control" id="name-add">
+                            </div>
+                            <div class="form-group">
+                                <label for="abb-add">Abbreviation:</label>
+                                <input type="text" class="form-control" id="abb-add">
+                            </div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Cancel
+							</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">
+								Add
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+            <!-- End Add Item Modal -->
+            <!-- Start Edit Item Modal -->
+			<div class="modal fade" id="modal-container-edit" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
+							<h4 class="modal-title" id="edit-modal-label">
+								Edit Item
+							</h4>
+						</div>
+						<div class="modal-body">
+                            <div class="form-group">
+                                <label for="name-add">Name:</label>
+                                <input type="text" class="form-control" id="name-edit">
+                            </div>
+                            <div class="form-group">
+                                <label for="abb-add">Abbreviation:</label>
+                                <input type="text" class="form-control" id="abb-edit">
+                            </div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Cancel
+							</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">
+								Save
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+            <!-- End Edit Item Modal -->
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
