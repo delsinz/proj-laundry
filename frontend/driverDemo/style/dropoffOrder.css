@@ -1,0 +1,26 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+th{
+    background: #333;
+    color: white;
+    font-weight: bold;
+
+}
+
+td{
+    text-align: center;
+}
+
+td, th{
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+input{
+    float: right;
+}
