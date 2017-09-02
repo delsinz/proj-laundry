@@ -16,7 +16,7 @@ $(function () {
         $orderTable = $('#orderTable'),
         $orderTableBody = $orderTable.find('tbody'),
         rowTemplate = '<tr data-ID="{OrderID}"><td>{OrderID}</td><td ><a href="#">{Status}</a></td></tr>';
-
+    alert("clientHub created successfully");
     function formatOrder(order) {
         return $.extend(order, {
             ID: order.ID,
