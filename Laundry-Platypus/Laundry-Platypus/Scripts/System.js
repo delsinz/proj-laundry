@@ -15,11 +15,11 @@ $(function () {
     var clientHub = $.connection.clientHub, // the generated client-side hub proxy
         $orderTable = $('#orderTable'),
         $orderTableBody = $orderTable.find('tbody'),
-        rowTemplate = '<tr data-ID="{OrderID}"><td>{OrderID}</td><td ><a href="#">{Status}</a></td></tr>';
-    alert("clientHub created successfully");
+        rowTemplate = '<tr data-OrderID="{OrderID}"><td>{OrderID}</td><td ><a href="#">{State}</a></td></tr>';
+    //alert("clientHub created successfully");
     function formatOrder(order) {
         return $.extend(order, {
-            ID: order.ID,
+            OrderID: order.ID,
             State: order.State
           
         });
@@ -42,7 +42,7 @@ $(function () {
         var displayOrder = formatOrder(order),
             $row = $(rowTemplate.supplant(displayOrder));
 
-        $orderTableBody.find('tr[data-ID=' + order.ID + ']')
+        $orderTableBody.find('tr[data-OrderID=' + order.ID + ']')
             .replaceWith($row);
     };
 
