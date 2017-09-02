@@ -5,9 +5,9 @@ using System.Web;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 
-namespace Laundry_Platypus
+namespace Laundry_Playtus
 {
-    [HubName("clientHub")]
+    [HubName("clientHub123")]
     public class ClientHub : Hub
     {
         //Person person;
@@ -34,7 +34,5 @@ namespace Laundry_Platypus
         //return _system.GetAllOrders();
         //return _system.GetAllOrders(person);
         //}
-
     }
-
 }

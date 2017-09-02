@@ -6,7 +6,7 @@ using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 using System.Data;
 
-namespace Laundry_Platypus
+namespace Laundry_Playtus
 {
     //This is ticker
     public class System_L
@@ -18,7 +18,7 @@ namespace Laundry_Platypus
         //public System() : this(Orderlist.Instance) { }
         private readonly object _updateOrderLock = new object();
         private volatile bool _updatingOrder = false;
-        
+
         public static System_L Instance
         {
             get
@@ -37,7 +37,7 @@ namespace Laundry_Platypus
             // Remainder of constructor ...
             //Initial orderlist
             //Order order_test = new Order("test_ID","test_state");
-           // Order order_test = new Order("test_ID", "test_state");
+            // Order order_test = new Order("test_ID", "test_state");
             //_orders.TryAdd("test", order_test);
             //orderstate>0 means available, 0 means deactive -1 means done
             DataSet dataset = Datacon.getDataset("SELECT * FROM tb_Order WHERE order_state>0 ", "Order");
@@ -58,7 +58,7 @@ namespace Laundry_Platypus
         public IEnumerable<Order> GetAllOrders()
         {
             return _orders.Values;
-         }
+        }
         public Person GetUser(string userid, string passwd)
         {
             if (_users.ContainsKey(userid))
@@ -89,7 +89,7 @@ namespace Laundry_Platypus
         }
         public IEnumerable<Order> GetAllOrders1(Person person)
         {
-            if (person.Roleid =="3")
+            if (person.Roleid == "3")
             {
                 //This is driver
                 ConcurrentDictionary<string, Order> orders_t = new ConcurrentDictionary<string, Order>();
