@@ -23,6 +23,7 @@ namespace Laundry_Platypus
             Active = active;
             Selfie = selfie;
             Roleid = roleid;
+            Passwd = passwd;
             
         }
     }

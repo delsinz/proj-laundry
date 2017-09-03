@@ -10,7 +10,7 @@ namespace Laundry_Platypus
     [HubName("clientHub")]
     public class ClientHub : Hub
     {
-        //Person person;
+        Person person;
         private readonly System_L _system;
 
         public ClientHub() : this(System_L.Instance) { }
@@ -19,21 +19,31 @@ namespace Laundry_Platypus
         {
             _system = system;
         }
-        //public void login(string userid, string passwd)
-        //{
-        //    person=_system.GetUser(userid, passwd);
-        //}
+        public void login(string userid, string passwd)
+        {
+            person = _system.GetUser(userid, passwd);
+        }
         public IEnumerable<Order> GetAllOrder()
         {
             return _system.GetAllOrders();
             //return _system.GetAllOrders(person);
         }
-        //public IEnumerable<Order> GetAllOrder(string userid, string passwd)
-        //{
-        //  person = _system.GetUser(userid, passwd);
-        //return _system.GetAllOrders();
-        //return _system.GetAllOrders(person);
-        //}
+        public IEnumerable<Order> GetAllOrder(string useridpasswd)
+        {
+            string userid = useridpasswd.Split(';')[0];
+            string passwd = useridpasswd.Split(';')[1];
+            try
+            {
+                login(userid, passwd);
+            }
+            catch
+            {
+                person = null;
+            }
+            if (person != null)
+            { return _system.GetAllOrders(person); }
+            return null;
+        }
 
     }
 

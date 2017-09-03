@@ -43,15 +43,16 @@ namespace Laundry_Platypus
             DataSet dataset = Datacon.getDataset("SELECT * FROM tb_Order WHERE order_state>0 ", "Order");
             foreach (DataRow pRow in dataset.Tables["Order"].Rows)
             {
-                Order order_test = new Order(pRow["order_id"].ToString(), pRow["order_state"].ToString());
+                Order order_test = new Order(pRow["order_id"].ToString(), pRow["order_state"].ToString(), pRow["order_date"].ToString(), pRow["customer_id"].ToString(), pRow["user_id"].ToString());
                 _orders.TryAdd(pRow["order_id"].ToString(), order_test);
             }
-            //System.Console.WriteLine("success");
+           // System.Console.WriteLine("success");
             dataset = Datacon.getDataset("SELECT * FROM tb_User ", "User");
             foreach (DataRow pRow in dataset.Tables["User"].Rows)
             {
                 Person person_t = new Person(pRow["user_id"].ToString(), pRow["user_name"].ToString(), pRow["user_contact"].ToString(), pRow["user_active"].ToString(), pRow["user_selfie"].ToString(), pRow["password"].ToString(), pRow["role_id"].ToString());
                 _users.TryAdd(pRow["user_id"].ToString(), person_t);
+                System.Console.WriteLine(pRow["user_id"]);
             }
             //System.Console.WriteLine("success");
         }
@@ -61,11 +62,16 @@ namespace Laundry_Platypus
          }
         public Person GetUser(string userid, string passwd)
         {
-            if (_users.ContainsKey(userid))
+            Person person_t;
+            //System.Console.WriteLine(userid+ passwd);
+            if (_users.ContainsKey(userid)==true)
             {
-                if (_users[userid].Passwd == passwd)
+                if (_users.TryGetValue(userid, out person_t))
                 {
-                    return _users[userid];
+                    if (person_t.Passwd.Equals(passwd))
+                    {
+                        return _users[userid];
+                    }
                 }
             }
             return null;
@@ -87,7 +93,7 @@ namespace Laundry_Platypus
                 }
             }
         }
-        public IEnumerable<Order> GetAllOrders1(Person person)
+        public IEnumerable<Order> GetAllOrders(Person person)
         {
             if (person.Roleid =="3")
             {
@@ -96,7 +102,7 @@ namespace Laundry_Platypus
                 IEnumerable<Order> orderlist = _orders.Values;
                 foreach (Order order_t in orderlist)
                 {
-                    if (order_t.HandlerID == person.ID)
+                    if (order_t.UserID == person.ID)
                     {
                         orders_t.TryAdd(order_t.ID, order_t);
                     }
@@ -110,7 +116,7 @@ namespace Laundry_Platypus
                 IEnumerable<Order> orderlist = _orders.Values;
                 foreach (Order order_t in orderlist)
                 {
-                    if (order_t.HandlerID == person.ID)
+                    if (order_t.UserID == person.ID)
                     {
                         orders_t.TryAdd(order_t.ID, order_t);
                     }

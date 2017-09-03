@@ -13,26 +13,24 @@ if (!String.prototype.supplant) {
 $(function () {
 
     var clientHub = $.connection.clientHub, // the generated client-side hub proxy
+        //up = '▲',
+        //down = '▼',
         $orderTable = $('#orderTable'),
         $orderTableBody = $orderTable.find('tbody'),
-        rowTemplate = '<tr data-OrderID="{OrderID}"><td>{OrderID}</td><td>{Customer}</td><td ><a href="#">{State}</a></td></tr>';
-    //alert("clientHub created successfully");
+        rowTemplate = '<tr data-ID="{OrderID}"><td>{OrderID}</td><td ><a href="#">{Status}</a></td></tr>';
+
     function formatOrder(order) {
         return $.extend(order, {
-            OrderID: order.ID,
-            State: order.State,
-            Customer: order.CustomerID
+            ID: order.ID,
+            State: order.State
+          
         });
     }
 
     function init() {
-        var userid = document.cookie.split("&")[0].split("=")[2]; 
-        var passwd = document.cookie.split("&")[1].split("=")[1]; 
-        //alert(userid + passwd);
-        clientHub.server.getAllOrder(userid+";"+passwd).done(function (order) {
+        clientHub.server.getAllOrder().done(function (order) {
             $orderTableBody.empty();
             $.each(order, function () {
-                // 
                 var order = formatOrder(this);
                 $orderTableBody.append(rowTemplate.supplant(order));
             });
@@ -44,14 +42,11 @@ $(function () {
         var displayOrder = formatOrder(order),
             $row = $(rowTemplate.supplant(displayOrder));
 
-        $orderTableBody.find('tr[data-OrderID=' + order.ID + ']')
+        $orderTableBody.find('tr[data-ID=' + order.ID + ']')
             .replaceWith($row);
-    };
-
-    //insert order 
+    }
 
     // Start the connection
     $.connection.hub.start().done(init);
-
 
 });
