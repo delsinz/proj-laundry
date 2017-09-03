@@ -135,6 +135,7 @@
     <Content Include="js\System.js" />
     <Content Include="login.aspx" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
+    <Content Include="Manager.aspx" />
     <Content Include="pickupOrder.html" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -153,6 +154,13 @@
   <ItemGroup>
     <Compile Include="ClientHub.cs" />
     <Compile Include="Datacon.cs" />
+    <Compile Include="Manager.aspx.cs">
+      <DependentUpon>Manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager.aspx.designer.cs">
+      <DependentUpon>Manager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserManage.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />

@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common.Master" AutoEventWireup="true" CodeBehind="DriverOverview.aspx.cs" Inherits="Laundry_Platypus.DriverOverview" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common.Master" AutoEventWireup="true" CodeBehind="Manager.aspx.cs" Inherits="Laundry_Platypus.Manager" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Pick-up order</title>
+    <title>Manager Desktop</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -9,20 +8,25 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/dropoffOrder.css">
+    <style type="text/css">
+        .auto-style1 {
+            height: 31px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>ASP.NET SignalR DriverOverview Sample</h1>
+    <h1>ASP.NET SignalR ManagerOverview Sample</h1>
 
-    <h2>Driver Order Table</h2>
+    <h2>Manager Order Table</h2>
 <div class="container">
     <div class="row">
                     <div id="orderTable" class="col-md-12">
                         <table border="1" class="table-striped table-condensed">
                             <thead>
                                 <tr>
-                                    <th>OrderID</th>
-                                    <th> Customer </th>
-                                    <th>Status</th>
+                                    <th class="auto-style1">OrderID</th>
+                                    <th class="auto-style1"> Customer </th>
+                                    <th class="auto-style1">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,5 +49,5 @@
                
         </div>
     </div>
-  
+    <asp:Button ID="Button1" runat="server" Text="Add Order" />
 </asp:Content>

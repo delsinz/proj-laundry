@@ -44,10 +44,11 @@ namespace Laundry_Platypus
                 newcookie.Values["passwd"] = passwd.Text;
                 newcookie.Expires = DateTime.Now.AddDays(1);
                 Response.AppendCookie(newcookie);
+                //manager
                 if (role_id == 1)
                 {
                     //Response.Write(Session["user_id"]);
-                    Response.Redirect("DriverOverview.aspx");
+                    Response.Redirect("Manager.aspx");
                 }
                 //packer page
                 if (role_id == 2)

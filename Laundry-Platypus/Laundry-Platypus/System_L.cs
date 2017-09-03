@@ -126,13 +126,19 @@ namespace Laundry_Platypus
             if (person.Roleid == "1")
             {
                 //This is officeworker
+                return _orders.Values;
             }
             if (person.Roleid == "4")
             {
                 //This is client
-                return _orders.Values;
+               
             }
             return null;
+        }
+        public bool AddOrder(Order order)
+        {
+
+            return false;
         }
     }
 }
