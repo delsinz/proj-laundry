@@ -7,15 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace Laundry_Platypus
 {
-    public partial class Common : System.Web.UI.MasterPage
+    public partial class OrderDetail_d : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            if (Session["user_name"] != null)
-            { name.Text = Session["user_name"].ToString(); }
-        }
-
-        protected void Search_Click(object sender, EventArgs e)
         {
 
         }
