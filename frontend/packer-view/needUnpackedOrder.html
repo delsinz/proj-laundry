@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/packerOrderTable.css">
+    <link rel="stylesheet" href="css/needUnpackedOrder.css">
     <script src="js/checkBox.js"></script>
     <script src="js/count.js"></script>
 </head>
@@ -175,8 +175,35 @@
                 </table>
                 <div class="well">
 
-                </div>
-            </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <label> Driver Notes </label>
+                                <textarea class="form-control" rows="4" id="driverNote" readonly>
+                                    3 coloured suits were dirty.
+                                    2 gowns needed repaired.
+                                    9 shirts were barnded.
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <label> Your Notes </label>
+                                <textarea class="form-control" rows="4" id="packerNote"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="well">
+                        <a href="packerOrderMain.html" class="btn btn-default">Back</a>
+                        <input id="button" type="submit" class="btn btn btn-default" value="Complete Pick-Up">
+
+
+                    </div>
+
+
+                 </div>
+
         </div>
     </div>
 </body>

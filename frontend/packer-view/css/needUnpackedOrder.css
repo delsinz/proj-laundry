@@ -28,3 +28,7 @@ td, th{
 #textTable{
     border: 1px solid transparent;
 }
+
+#button{
+    float: right;
+}
