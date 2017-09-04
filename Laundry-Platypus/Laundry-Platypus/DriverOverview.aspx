@@ -19,7 +19,7 @@
             <thead>
                 <tr>
                     <th>OrderID</th>
-                    <th>Customer </th>
+                    <th>CustomerName </th>
                     <th>Status</th>
                 </tr>
             </thead>

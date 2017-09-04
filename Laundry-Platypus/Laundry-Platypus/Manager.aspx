@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="css/dropoffOrder.css"> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>ASP.NET SignalR ManagerOverview Sample</h1>
-
-    <h2>Manager Order Table</h2>
 <div class="container">
     <div class="row">
                     <div id="orderTable" class="col-md-12">
