@@ -7,8 +7,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <title>Complete Workwear Login</title>
-    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'/>
+    <link rel="stylesheet" href="css/style.css"/>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script>
+    $( document ).ready( function(){
+      $( '#loginWindow' ).animate({ 'width': '100%' }, 500)
+        .delay(30)
+        .animate({ 'height': '300px' }, 500);
+      $( '.page-header, .input-group, .btn' )
+        .delay(850)
+        .animate({ 'opacity': '100' }, 7000);
+    });
+
+</script>
+       
 </head>
 <body>
     <form id="form1" runat="server">
@@ -34,18 +47,7 @@
    
     </div>
 </div>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script>
-    $( document ).ready( function(){
-      $( '#loginWindow' ).animate({ 'width': '100%' }, 500)
-        .delay(30)
-        .animate({ 'height': '300px' }, 500);
-      $( '.page-header, .input-group, .btn' )
-        .delay(850)
-        .animate({ 'opacity': '100' }, 7000);
-    });
 
-</script>
     </form>
 </body>
 </html>

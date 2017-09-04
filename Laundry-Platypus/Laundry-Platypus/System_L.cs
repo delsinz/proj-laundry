@@ -76,7 +76,7 @@ namespace Laundry_Platypus
             }
             return null;
         }
-        private void UpdateOrder(object state)
+        private void UpdateOrder(Order order)
         {
             lock (_updateOrderLock)
             {
@@ -87,6 +87,10 @@ namespace Laundry_Platypus
                     foreach (var order_t in _orders.Values)
                     {
 
+                        if (order_t.ID.Equals(order.ID))
+                        {
+                            //_orders.TryUpdate;
+                        }
                     }
 
                     _updatingOrder = false;

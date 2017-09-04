@@ -15,10 +15,6 @@ namespace Laundry_Platypus
             system_L = System_L.Instance;
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Order order_t=new Order(,,,,);
-            system_L.AddOrder(order_t);
-        }
+        
     }
 }
