@@ -40,10 +40,10 @@ namespace Laundry_Platypus
            // Order order_test = new Order("test_ID", "test_state");
             //_orders.TryAdd("test", order_test);
             //orderstate>0 means available, 0 means deactive -1 means done
-            DataSet dataset = Datacon.getDataset("SELECT * FROM tb_Order WHERE order_state>0 ", "Order");
+            DataSet dataset = Datacon.getDataset("SELECT * FROM tb_Order,tb_Order_state,tb_User WHERE order_state>0 and tb_Order.customer_id=tb_User.user_id and tb_Order.order_state=tb_Order_state.state_id", "Order");
             foreach (DataRow pRow in dataset.Tables["Order"].Rows)
             {
-                Order order_test = new Order(pRow["order_id"].ToString(), pRow["order_state"].ToString(), pRow["order_date"].ToString(), pRow["customer_id"].ToString(), pRow["user_id"].ToString());
+                Order order_test = new Order(pRow["order_id"].ToString(), pRow["order_state"].ToString(), pRow["order_date"].ToString(), pRow["customer_id"].ToString(), pRow["user_id"].ToString(), pRow["user_name"].ToString(), pRow["state_name"].ToString());
                 _orders.TryAdd(pRow["order_id"].ToString(), order_test);
             }
            // System.Console.WriteLine("success");
@@ -76,7 +76,7 @@ namespace Laundry_Platypus
             }
             return null;
         }
-        private void UpdateOrder(object state)
+        private void UpdateOrder(Order order)
         {
             lock (_updateOrderLock)
             {
@@ -87,6 +87,10 @@ namespace Laundry_Platypus
                     foreach (var order_t in _orders.Values)
                     {
 
+                        if (order_t.ID.Equals(order.ID))
+                        {
+                            //_orders.TryUpdate;
+                        }
                     }
 
                     _updatingOrder = false;

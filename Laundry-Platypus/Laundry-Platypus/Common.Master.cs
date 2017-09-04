@@ -11,6 +11,12 @@ namespace Laundry_Platypus
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["user_name"] != null)
+            { name.Text = Session["user_name"].ToString(); }
+        }
+
+        protected void Search_Click(object sender, EventArgs e)
+        {
 
         }
     }

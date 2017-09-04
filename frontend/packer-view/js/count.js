@@ -34,4 +34,46 @@ $(document).ready(function () {
             $('#quantity2').val(quantity - 1);
         }
     });
+
+    $('.quantity-right-plus3').click(function(e){
+        e.preventDefault ();
+        var quantity = parseInt($('#quantity3').val());
+        $('#quantity3').val(quantity + 1);
+    });
+
+    $('.quantity-left-minus3').click(function(e){
+        e.preventDefault();
+        var quantity = parseInt($('#quantity3').val());
+        if(quantity>0){
+            $('#quantity3').val(quantity - 1);
+        }
+    });
+
+    $('.quantity-right-plus4').click(function(e){
+        e.preventDefault ();
+        var quantity = parseInt($('#quantity4').val());
+        $('#quantity4').val(quantity + 1);
+    });
+
+    $('.quantity-left-minus4').click(function(e){
+        e.preventDefault();
+        var quantity = parseInt($('#quantity4').val());
+        if(quantity>0){
+            $('#quantity4').val(quantity - 1);
+        }
+    });
+
+    $('.quantity-right-plus5').click(function(e){
+        e.preventDefault ();
+        var quantity = parseInt($('#quantity5').val());
+        $('#quantity5').val(quantity + 1);
+    });
+
+    $('.quantity-left-minus5').click(function(e){
+        e.preventDefault();
+        var quantity = parseInt($('#quantity5').val());
+        if(quantity>0){
+            $('#quantity5').val(quantity - 1);
+        }
+    });
 });

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>driver view</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/needUnpackedOrder.css">
+    <script src="js/checkBox.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th width="25%"> Type </th>
+                            <th width="25%"> Picked Quantity </th>
+                            <th width="25%"> Clean Quantity </th>
+                            <th width="25%"> Check Box </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> Coloured Suit </td>
+                            <td> 17 </td>
+                            <td> 17 </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary" disabled="disabled">Checked</button>
+                                        <input type="checkbox" class="hidden" checked/>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Gown </td>
+                            <td> 22 </td>
+                            <td> 21 </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary" disabled="disabled">Checked</button>
+                                        <input type="checkbox" class="hidden"/>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Coat </td>
+                            <td> 10 </td>
+                            <td> 10 </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary" disabled="disabled">Checked</button>
+                                        <input type="checkbox" class="hidden" checked/>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> White Suit </td>
+                            <td> 30 </td>
+                            <td> 30 </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary" disabled="disabled">Checked</button>
+                                        <input type="checkbox" class="hidden" checked/>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Jumper </td>
+                            <td> 70 </td>
+                            <td> 68 </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary" disabled="disabled">Checked</button>
+                                        <input type="checkbox" class="hidden"/>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Bib & Brace </td>
+                            <td> 23 </td>
+                            <td> 23 </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary" disabled="disabled">Checked</button>
+                                        <input type="checkbox" class="hidden" checked/>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Hand Tower </td>
+                            <td> 61 </td>
+                            <td> 61 </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary" disabled="disabled">Checked</button>
+                                        <input type="checkbox" class="hidden" checked/>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Bath Tower </td>
+                            <td> 33 </td>
+                            <td> 34 </td>
+                            <td>
+                                <div>
+                                    <span class="button-checkbox">
+                                        <button type="button" class="btn" data-color="primary" disabled="disabled">Checked</button>
+                                        <input type="checkbox" class="hidden"/>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="well">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <label> Driver Notes </label>
+                                <textarea class="form-control" rows="4" id="driverNote" readonly>
+                                    3 coloured suits were dirty.
+                                    2 gowns needed repaired.
+                                    9 shirts were barnded.
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <label> Your Notes </label>
+                                <textarea class="form-control" rows="4" id="packerNote" placeholder="Write notes here...">
+                                    1 grown missing.
+                                    2 jumper missing.
+                                    find 1 more bath tower.
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="well">
+                        <a href="packerOrderMain.html" class="btn btn-default">Back</a>
+                        <input id="button" type="submit" class="btn btn btn-default" value="Finish" >
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

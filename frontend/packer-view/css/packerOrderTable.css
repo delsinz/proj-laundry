@@ -24,3 +24,7 @@ td, th{
 .orderId{
     text-align: left;
 }
+
+#textTable{
+    border: 1px solid transparent;
+}

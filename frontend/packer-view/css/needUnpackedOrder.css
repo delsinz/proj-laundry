@@ -11,12 +11,24 @@ th{
 
 }
 
+td{
+    text-align: center;
+}
+
 td, th{
     padding: 6px;
     border: 1px solid #ccc;
-    text-align: left;
+    text-align: center;
 }
 
 .orderId{
     text-align: left;
+}
+
+#textTable{
+    border: 1px solid transparent;
+}
+
+#button{
+    float: right;
 }
