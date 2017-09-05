@@ -215,6 +215,8 @@
     <Content Include="office-sidebar.html" />
     <Content Include="OrderDetail_d.aspx" />
     <Content Include="OrderDetail_p.aspx" />
+    <Content Include="Orderdetail_pp.aspx" />
+    <Content Include="PackerOverview.aspx" />
     <Content Include="pickupOrder.html" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -259,6 +261,20 @@
     </Compile>
     <Compile Include="OrderDetail_p.aspx.designer.cs">
       <DependentUpon>OrderDetail_p.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orderdetail_pp.aspx.cs">
+      <DependentUpon>Orderdetail_pp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orderdetail_pp.aspx.designer.cs">
+      <DependentUpon>Orderdetail_pp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackerOverview.aspx.cs">
+      <DependentUpon>PackerOverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackerOverview.aspx.designer.cs">
+      <DependentUpon>PackerOverview.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserManage.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

@@ -54,7 +54,7 @@ namespace Laundry_Platypus
                 if (role_id == 2)
                 {
                     //Response.Write(Session["user_id"]);
-                    Response.Redirect("admin.aspx");
+                    Response.Redirect("PackerOverview.aspx");
                 }
                 //driver page
                 if (role_id == 3)

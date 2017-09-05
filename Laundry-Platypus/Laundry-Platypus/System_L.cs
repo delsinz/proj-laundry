@@ -141,8 +141,15 @@ namespace Laundry_Platypus
         }
         public bool AddOrder(Order order)
         {
-
-            return false;
+            try
+            {
+                _orders.TryAdd(order.ID, order);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
