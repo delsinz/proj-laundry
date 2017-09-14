@@ -67,6 +67,45 @@
                     </tbody>
                 </table>
                 <a id="modal-add" href="#modal-container-add" role="button" class="btn btn-primary" data-toggle="modal">Add Order</a>
+                <!-- Start Add Item Modal -->
+                <div class="modal fade" id="modal-container-add" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    ×
+                                </button>
+                                <h4 class="modal-title" id="add-modal-label">
+                                    Add Item
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="name-add">Order ID:</label>
+                                    <input type="text" class="form-control" id="name-add">
+                                </div>
+                                <div class="form-group">
+                                    <label for="abb-add">Customer:</label>
+                                    <input type="text" class="form-control" id="abb-add">
+                                </div>
+                                <div class="form-group">
+                                    <label for="abb-add">Pick-Up Date:</label>
+                                    <input type="text" class="form-control" id="abb-add">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Cancel
+                                </button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Add Item Modal -->
             </div>
         </div>
     </div>
