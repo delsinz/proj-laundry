@@ -210,6 +210,7 @@
     <Content Include="assets\vendor\linearicons\fonts\Linearicons-Free.ttf" />
     <Content Include="assets\vendor\linearicons\fonts\Linearicons-Free.woff" />
     <Content Include="assets\vendor\linearicons\fonts\Linearicons-Free.woff2" />
+    <Content Include="AddOrderDetail.aspx" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
     <Content Include="ManageEmployee.aspx" />
     <Content Include="ManageItem.aspx" />
@@ -334,6 +335,13 @@
     <Compile Include="Response.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="System_L.cs" />
+    <Compile Include="AddOrderDetail.aspx.cs">
+      <DependentUpon>AddOrderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddOrderDetail.aspx.designer.cs">
+      <DependentUpon>AddOrderDetail.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

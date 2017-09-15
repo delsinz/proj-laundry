@@ -18,25 +18,12 @@
                     <asp:ListItem Text="<Select driver>" Value="0" />
         </asp:DropDownList>
     </div>
-    <asp:Table ID="myTable" runat="server" Width="100%"> 
-        <asp:TableRow>
-            <asp:TableCell>Garment type</asp:TableCell>
-            <asp:TableCell>Amount</asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell>
-                <asp:DropDownList ID="garment_type" runat="server" AppendDataBoundItems="true">
-                    <asp:ListItem Text="<Select garment type>" Value="0" />
-                </asp:DropDownList>
-            </asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="amount" runat="server" type="amount" class="form-control"  aria-describedby="basic-addon2"></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-    </asp:Table>
-
+    
+    <asp:TextBox ID="garment_number" runat="server" class="form-control" placeholder="number of garment types"  aria-describedby="basic-addon2" lang="en"></asp:TextBox>
     <asp:Button ID="add_garment" runat="server" OnClick=add_Click" Text="Add garments" />
-
+    <asp:DropDownList ID="garment_type" runat="server" AppendDataBoundItems="true">
+                    <asp:ListItem Text="<Select garment>" Value="0" />
+    </asp:DropDownList>
 
  
     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Save order" />

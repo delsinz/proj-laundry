@@ -32,20 +32,20 @@ namespace Laundry_Platypus
             //Generate time as ID
             long time_id = long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss"));
 
+            Session["order_id"] = time_id;
+            Session["order_date"] = date.Text;
+            Session["customer_id"] = CustomerDropList.Text;
+            Session["assignee_id"] = AssigneeDropList.Text;
+            Session["number_of_garments"] = garment_number.Text;
+
+            Response.Redirect("AddOrderDetail.aspx");
 
 
+           //if ()
+           //{
+           //    Console.WriteLine("inserted");
+           //}
 
-            if (Datacon.execSQL("INSERT INTO tb_Order (`order_id`,`order_date`,`customer_id`,`user_id`,`order_state`) VALUES ('"
-                + time_id + "','" + date.Text + "','" + CustomerDropList.Text + "','" + AssigneeDropList.Text + "','1');"))
-            {
-                Console.WriteLine("inserted");
-            }
-
-            if (Datacon.execSQL("INSERT INTO tb_Order_garments (`order_id`,`garment_id`,`amount`) VALUES ('"
-                + time_id + "','" + garment_type.Text + "','" + amount.Text + "');"))
-            {
-                Console.WriteLine("garment inserted");
-            }
         }
 
         protected void add_Click()
@@ -53,7 +53,7 @@ namespace Laundry_Platypus
             TableCell cel1 = new TableCell();
             TableCell cel2 = new TableCell();
             DropDownList droplist = new DropDownList();
-            droplist.ID = Convert.ToString("")
+            droplist.ID = Convert.ToString("");
         }
 
         private void LoadGarmentTypes()

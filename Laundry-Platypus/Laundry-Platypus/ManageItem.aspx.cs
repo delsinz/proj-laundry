@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient;2
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -54,12 +54,7 @@ namespace Laundry_Platypus
             {
                 get_item_id = Request.Cookies["item_id"].ToString();
 
-                if (NameTextBox.Text != null && AbbrTextBox.Text != null)
-                {
-                    Datacon.execSQL("UPDATE `tb_Garment_type` SET `type_name` = '" + NameTextBox.Text
-                        + "' WHERE `garment_id` = '" + get_item_id + "';");
-                    //add abbr
-                }
+                Datacon.execSQL("UPDATE `tb_Garment_type` set `activated` = `false`");
             }
 
         }

@@ -10,60 +10,60 @@
 namespace Laundry_Platypus {
     
     
-    public partial class AddOrder {
+    public partial class WebForm1 {
         
         /// <summary>
-        /// CustomerDropList 控件。
+        /// Item_ID 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CustomerDropList;
+        protected global::System.Web.UI.WebControls.Label Item_ID;
         
         /// <summary>
-        /// date 控件。
+        /// Item_Name 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox date;
+        protected global::System.Web.UI.WebControls.Label Item_Name;
         
         /// <summary>
-        /// AssigneeDropList 控件。
+        /// Item_Abbr 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AssigneeDropList;
+        protected global::System.Web.UI.WebControls.Label Item_Abbr;
         
         /// <summary>
-        /// garment_number 控件。
+        /// RemoveButton 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox garment_number;
+        protected global::System.Web.UI.WebControls.Button RemoveButton;
         
         /// <summary>
-        /// garment_type 控件。
+        /// return 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList garment_type;
+        protected global::System.Web.UI.WebControls.Button @return;
         
         /// <summary>
-        /// Button1 控件。
+        /// save 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button save;
     }
 }
