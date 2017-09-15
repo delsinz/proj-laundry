@@ -211,7 +211,10 @@
     <Content Include="assets\vendor\linearicons\fonts\Linearicons-Free.woff" />
     <Content Include="assets\vendor\linearicons\fonts\Linearicons-Free.woff2" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
+    <Content Include="ManageEmployee.aspx" />
+    <Content Include="ManageItem.aspx" />
     <Content Include="Manager.aspx" />
+    <Content Include="ManageSales.aspx" />
     <Content Include="office-sidebar.html" />
     <Content Include="OrderDetail_d.aspx" />
     <Content Include="OrderDetail_p.aspx" />
@@ -241,12 +244,33 @@
     </Compile>
     <Compile Include="ClientHub.cs" />
     <Compile Include="Datacon.cs" />
+    <Compile Include="ManageEmployee.aspx.cs">
+      <DependentUpon>ManageEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageEmployee.aspx.designer.cs">
+      <DependentUpon>ManageEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageItem.aspx.cs">
+      <DependentUpon>ManageItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageItem.aspx.designer.cs">
+      <DependentUpon>ManageItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manager.aspx.cs">
       <DependentUpon>Manager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Manager.aspx.designer.cs">
       <DependentUpon>Manager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageSales.aspx.cs">
+      <DependentUpon>ManageSales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageSales.aspx.designer.cs">
+      <DependentUpon>ManageSales.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrderDetail_d.aspx.cs">
       <DependentUpon>OrderDetail_d.aspx</DependentUpon>

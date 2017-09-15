@@ -8,6 +8,11 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
     <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/dropoffOrder.css"> 
+    <style type="text/css">
+        .auto-style1 {
+            height: 32px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div class="container">
@@ -24,6 +29,7 @@
                             <tbody>
                                 <tr class="loading">
                                     <td colspan="5">loading...</td>
+                                    
                                 </tr>
                             </tbody>
                         </table>

@@ -4,7 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="input-group">
         <span class="input-group-addon" id="basic-addon1">Customer First Name</span>
-        <asp:TextBox ID="customer" runat="server" class="form-control" aria-describedby="basic-addon1"></asp:TextBox>
+        <asp:DropDownList ID="CustomerDropList" runat="server" AppendDataBoundItems="true">
+                    <asp:ListItem Text="<Select customer>" Value="0" />
+        </asp:DropDownList>
     </div>
     <div class="input-group">
         <span class="input-group-addon" id="basic-addon2">Pick Up Date</span>
@@ -12,7 +14,9 @@
     </div>
     <div class="input-group">
         <span class="input-group-addon" id="basic-addon3">Assignee First Name</span>
-        <asp:TextBox ID="assignee" runat="server" type="assignee" class="form-control"  aria-describedby="basic-addon2"></asp:TextBox>
+        <asp:DropDownList ID="AssigneeDropList" runat="server" AppendDataBoundItems="true">
+                    <asp:ListItem Text="<Select driver>" Value="0" />
+        </asp:DropDownList>
     </div>
     <asp:Table ID="myTable" runat="server" Width="100%"> 
         <asp:TableRow>
@@ -29,7 +33,9 @@
                 <asp:TextBox ID="amount" runat="server" type="amount" class="form-control"  aria-describedby="basic-addon2"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
-    </asp:Table>  
+    </asp:Table>
+
+    <asp:Button ID="add_garment" runat="server" OnClick=add_Click" Text="Add garments" />
 
 
  
