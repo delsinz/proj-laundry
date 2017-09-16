@@ -18,7 +18,7 @@ namespace Laundry_Platypus
         //public System() : this(Orderlist.Instance) { }
         private readonly object _updateOrderLock = new object();
         private volatile bool _updatingOrder = false;
-        
+        private Controler controler;
         public static System_L Instance
         {
             get
@@ -54,6 +54,7 @@ namespace Laundry_Platypus
                 _users.TryAdd(pRow["user_id"].ToString(), person_t);
                 System.Console.WriteLine(pRow["user_id"]);
             }
+            controler = new Controler(_users, _orders);
             //System.Console.WriteLine("success");
         }
         public IEnumerable<Order> GetAllOrders()
