@@ -10,7 +10,8 @@ using System.Data;
 namespace Laundry_Platypus
 {
     public partial class AddOrder : System.Web.UI.Page
-    {
+    {   
+        
         System_L system_L = System_L.Instance;
         static int n_garment = 0;
 

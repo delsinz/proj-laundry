@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;2
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -21,19 +21,20 @@ namespace Laundry_Platypus
 
         // Edit garment
         protected void Save_Edit_Click(object sender, EventArgs e) {
+             
             string get_item_id = null;
             if (Request.Cookies["item_id"].ToString() != null)
             {
                 get_item_id = Request.Cookies["item_id"].ToString();
-                
+                //Response.Write("<script lanuage=javascript>alert({get_item_id});window.location.href='ManageItem.aspx'</script>");
                 if (NameTextBox.Text != null && AbbrTextBox.Text != null)
                 {
                     Datacon.execSQL("UPDATE `tb_Garment_type` SET `type_name` = '" + NameTextBox.Text
-                        + "' WHERE `garment_id` = '" + get_item_id + "';");
+                    + "' WHERE `garment_id` = '" + get_item_id + "';");
                     //add abbr
                 }
             }
-          
+
         }
         
         // Add garment 

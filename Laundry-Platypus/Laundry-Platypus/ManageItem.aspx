@@ -10,7 +10,7 @@
     <meta name="author" content="LayoutIt!">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/itemStyle.css" rel="stylesheet">
     <style type="text/css">
         .auto-style1 {
             position: relative;
@@ -29,56 +29,55 @@
     
     <div class="container-fluid">
 	<div class="row">
-		<div class="auto-style1">
-			<table class="table table-hover">
-                <thead>
-					<tr>
-						<th>
-							Item ID
-						</th>
-						<th>
-							Name
-						</th>
-						<th>
-							Abbreviation
-						</th>
-						<th>
-							Action
-						</th>
-					</tr>
-				</thead>
-                <tbody>
-                       <asp:DataList ID="DataList1" runat="server">
-                        <EditItemStyle Width="800px" />
-    
-                        <ItemTemplate>
-
+		<div class="col-md-12">
+            
+            <asp:DataList ID="DataList1" runat="server" Width="100%" >
+                 
+                <HeaderTemplate>
+                <table class="table table-hover"  >
+                    <thead>
                         <tr>
-                            <td>
-                                <asp:Label ID="Item_ID" runat="server" Font-Size="9pt" Height="19px" Width="1px"></asp:Label>
-                                <%#DataBinder.Eval(Container.DataItem, "")%>
-                            </td>
-                            <td>
-                                <asp:Label ID="Item_Name" runat="server" Font-Size="9pt" Height="19px" Width="1px"></asp:Label>
-                                <%#DataBinder.Eval(Container.DataItem, "")%>
-                            </td>
-                            <td>
-                                <asp:Label ID="Item_Abbr" runat="server" Font-Size="9pt" Height="19px" Width="1px"></asp:Label>
-                                <%#DataBinder.Eval(Container.DataItem, "")%>
-                            </td>
-                            <td>
-                                <input type="button" name="Submit" value="Edit" onclick="edit(this)"/>
-                                
-                                <asp:Button ID="RemoveButton" type="button" class="btn btn-primary" runat="server" OnClick="Remove_Click" Text="Remove" />
-                            </td>                    
-
+                            <th>
+                                Item ID
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Actions
+                            </th>
                         </tr>
-                
+                    </thead>
+                </HeaderTemplate>
+                <ItemTemplate>
+                     <tbody>
+                         <tr>
+                            <td>
+                                <asp:Label ID="Item_ID" runat="server" ></asp:Label>
+                                <%#DataBinder.Eval(Container.DataItem, "garment_id")%>
+                            </td>
+                            
+                            <td>
+
+                                <asp:Label ID="Item_Name" runat="server" Font-Size="9pt" Height="19px" Width="1px"></asp:Label>
+                                <%#DataBinder.Eval(Container.DataItem, "type_name")%>
+                            </td>
+                            <!-- add abbrev -->
+                            
+                            <td>
+                                <input type="button" name="Submit" value="Edit" onclick="edit(this)" class="btn btn-default"/>
+                                
+                                <asp:Button ID="Button3" type="button" class="btn btn-danger" runat="server" OnClick="Remove_Click" Text="Remove" />
+                            </td>                           
+                        </tr>
+                     </tbody>   
                 </ItemTemplate>
-                </asp:DataList>
+                <FooterTemplate>
+                </table>
+                </FooterTemplate>
+            </asp:DataList>
                     
-                </tbody>
-			</table>
+			
 			<a id="modal-add" href="#modal-container-add" role="button" class="btn btn-primary" data-toggle="modal">Add Item</a>
             <!-- Start Add Item Modal -->
 			<div class="modal fade" id="modal-container-add" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -156,12 +155,23 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/cookie.min.js"></script>
+    
     <script>
         function edit(obj) {
-            var selectedTr = obj;
-            var itemId = selectTr.cells[0].childNodes[0].value;
-            document.cookie = "item_id = {itemId}";
-            window.location.href = "#modal-container-edit";
+            
+            var itemId = $(obj).parent().siblings(":first").text()
+          
+            //window.alert(itemId);
+
+
+            //cookie.set('itemId', itemId);
+            //var test = Cookie.get('itemId');
+            //window.alert(document.cookie);
+
+             jQuery.noConflict(); 
+             $('#modal-container-edit').modal('show');
+            
         }
     </script>
 </asp:Content>

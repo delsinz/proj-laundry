@@ -1,0 +1,24 @@
+# Empty CSS file for your own CSS
+table {
+    margin: 0 auto;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#modal-add {
+    position: relative;
+    float: right;
+    margin-right: 10%;
+}
+
+#itemTable{
+	width: 100%;
+}
