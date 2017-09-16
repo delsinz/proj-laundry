@@ -244,6 +244,7 @@
       <DependentUpon>AddOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientHub.cs" />
+    <Compile Include="Controler.cs" />
     <Compile Include="Datacon.cs" />
     <Compile Include="ManageEmployee.aspx.cs">
       <DependentUpon>ManageEmployee.aspx</DependentUpon>
