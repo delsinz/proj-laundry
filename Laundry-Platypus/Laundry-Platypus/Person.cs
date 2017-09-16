@@ -31,6 +31,13 @@ namespace Laundry_Platypus
     {
         public Producer(string id, string name, string contact, string active, string selfie, string passwd, string roleid) : base(id, name, contact, active, selfie, passwd, roleid)
         {
+            ID = id;
+            Name = name;
+            Contact = contact;
+            Active = active;
+            Selfie = selfie;
+            Roleid = roleid;
+            Passwd = passwd;
         }
 
         public string Department { get; set; }
@@ -44,6 +51,14 @@ namespace Laundry_Platypus
 
         public Driver(string id, string name, string contact, string active, string selfie, string passwd, string roleid) : base(id, name, contact, active, selfie, passwd, roleid)
         {
+            OrderNumber = 0;
+            ID = id;
+            Name = name;
+            Contact = contact;
+            Active = active;
+            Selfie = selfie;
+            Roleid = roleid;
+            Passwd = passwd;
         }
 
         public Order getOrder_p(string ID)
@@ -77,9 +92,16 @@ namespace Laundry_Platypus
         {
             return dropoff_list;
         }
-        public int addOrder(Order order)
+        public int addOrder_p(Order order)
         {
+            OrderNumber = OrderNumber + 1;
             pickup_list.Add(order);
+            return pickup_list.Count;
+        }
+        public int addOrder_d(Order order)
+        {
+            OrderNumber = OrderNumber + 1;
+            dropoff_list.Add(order);
             return pickup_list.Count;
         }
         public bool setOrder(Order order)
@@ -89,6 +111,91 @@ namespace Laundry_Platypus
                 if (order_t.ID == order.ID)
                 {
                     int index=pickup_list.IndexOf(order_t);
+                    // change the order_t's attribute
+                    pickup_list[index] = order;
+                    return true;
+                }
+            }
+            return false;
+        }
+        public void setOrder(Order[] order)
+        {
+            pickup_list.Clear();
+            foreach (Order order_t in order)
+            {
+                pickup_list.Add(order_t);
+            }
+            OrderNumber = pickup_list.Count();
+            return;
+        }
+    }
+    public class Packer : Producer
+    {
+        private List<Order> pickup_list = new List<Order>();
+        private List<Order> dropoff_list = new List<Order>();
+
+        public Packer(string id, string name, string contact, string active, string selfie, string passwd, string roleid) : base(id, name, contact, active, selfie, passwd, roleid)
+        {
+            OrderNumber = 0;
+            ID = id;
+            Name = name;
+            Contact = contact;
+            Active = active;
+            Selfie = selfie;
+            Roleid = roleid;
+            Passwd = passwd;
+        }
+
+        public Order getOrder_p(string ID)
+        {
+            foreach (Order order in pickup_list)
+            {
+                if (order.ID == ID)
+                {
+                    return order;
+                }
+            }
+            return null;
+        }
+        public List<Order> getOrder_p()
+        {
+
+            return pickup_list;
+        }
+        public Order getOrder_d(string ID)
+        {
+            foreach (Order order in dropoff_list)
+            {
+                if (order.ID == ID)
+                {
+                    return order;
+                }
+            }
+            return null;
+        }
+        public List<Order> getOrder_d()
+        {
+            return dropoff_list;
+        }
+        public int addOrder_p(Order order)
+        {
+            OrderNumber++;
+            pickup_list.Add(order);
+            return pickup_list.Count;
+        }
+        public int addOrder_d(Order order)
+        {
+            OrderNumber++;
+            dropoff_list.Add(order);
+            return pickup_list.Count;
+        }
+        public bool setOrder(Order order)
+        {
+            foreach (Order order_t in pickup_list)
+            {
+                if (order_t.ID == order.ID)
+                {
+                    int index = pickup_list.IndexOf(order_t);
                     // change the order_t's attribute
                     pickup_list[index] = order;
                     return true;
