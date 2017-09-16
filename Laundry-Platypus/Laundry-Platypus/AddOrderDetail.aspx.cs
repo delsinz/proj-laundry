@@ -39,7 +39,7 @@ namespace Laundry_Platypus
                     dpl.DataBind();
                     tc1.Controls.Add(dpl);
                     TextBox textb = new TextBox();
-                    text
+                    //text
                     tc2.Controls.Add(textb);
 
                     //add to table
@@ -84,7 +84,7 @@ namespace Laundry_Platypus
 
             for(int i = 0; i < (int)Session["number_of_garments"]; i++)
             {
-                Datacon.execSQL();
+                //Datacon.execSQL();
             }
 
         }
