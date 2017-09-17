@@ -30,8 +30,9 @@
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-            
-            <asp:DataList ID="DataList1" runat="server" Width="100%" >
+            <asp:HiddenField ID="itemId" runat="server" />
+
+            <asp:DataList ID="DataList1" runat="server" Width="100%" onitemcommand="DataList1_ItemCommand" >
                  
                 <HeaderTemplate>
                 <table class="table table-hover"  >
@@ -42,6 +43,9 @@
                             </th>
                             <th>
                                 Name
+                            </th>
+                            <th>
+                                Abbreviation
                             </th>
                             <th>
                                 Actions
@@ -62,12 +66,16 @@
                                 <asp:Label ID="Item_Name" runat="server" Font-Size="9pt" Height="19px" Width="1px"></asp:Label>
                                 <%#DataBinder.Eval(Container.DataItem, "type_name")%>
                             </td>
-                            <!-- add abbrev -->
+                            <td>
+
+                                <asp:Label ID="Label1" runat="server" Font-Size="9pt" Height="19px" Width="1px"></asp:Label>
+                                <%#DataBinder.Eval(Container.DataItem, "abbreviation")%>
+                            </td>
                             
                             <td>
                                 <input type="button" name="Submit" value="Edit" onclick="edit(this)" class="btn btn-default"/>
                                 
-                                <asp:Button ID="Button3" type="button" class="btn btn-danger" runat="server" OnClick="Remove_Click" Text="Remove" />
+                                <asp:Button ID="Button3" class="btn btn-danger" runat="server"  Text="Remove" CommandName="remove" />
                             </td>                           
                         </tr>
                      </tbody>   
@@ -76,9 +84,10 @@
                 </table>
                 </FooterTemplate>
             </asp:DataList>
-                    
-			
+                    			
 			<a id="modal-add" href="#modal-container-add" role="button" class="btn btn-primary" data-toggle="modal">Add Item</a>
+            
+            <asp:Button ID="Button4" runat="server" Text="Test" OnClick="Test"/>
             <!-- Start Add Item Modal -->
 			<div class="modal fade" id="modal-container-add" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
@@ -107,7 +116,7 @@
 								Cancel
 							</button>
 
-                            <asp:Button ID="Button2" runat="server" Text="Add" OnClick="Add_Click" type="button" class="btn btn-primary" data-dismiss="modal"/>
+                            <asp:Button ID="Button2" runat="server" Text="Add" OnClick="Add_Click" type="button" class="btn btn-primary" UseSubmitBehavior="false" data-dismiss="modal"/>
 							
 						</div>
 					</div>
@@ -142,7 +151,7 @@
 							<button type="button" class="btn btn-default" data-dismiss="modal">
 								Cancel
 							</button>
-                            <asp:Button ID="Button1" runat="server" Text="Save" OnClick="Save_Edit_Click" type="button" class="btn btn-primary" data-dismiss="modal"/>
+                            <asp:Button ID="Button1" runat="server" Text="Save" OnClick="Save_Edit_Click" type="button" class="btn btn-primary" UseSubmitBehavior="false"  data-dismiss="modal"/>
 						
 						</div>
 					</div>
@@ -152,6 +161,7 @@
 		</div>
 	</div>
 </div>
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
@@ -160,18 +170,26 @@
     <script>
         function edit(obj) {
             
-            var itemId = $(obj).parent().siblings(":first").text()
-          
-            //window.alert(itemId);
-
-
-            //cookie.set('itemId', itemId);
-            //var test = Cookie.get('itemId');
-            //window.alert(document.cookie);
+            var itemId = $(obj).parent().siblings(":first").text();
+            //var msg = document.getElementById('itemId');
+            //var value = msg.value;
+            //msg.value = '1';
+                //$(obj).parent().siblings(":first").text();
+            
+            document.cookie = "itemId =" + itemId + ";" 
+            //document.cookie = "itemId=" + itemId + "; expires=Wed, 1 Jan 2070 13:47:11 UTC; path=/"
+            //document.cookie = 'itemId =' + display + '; expires=Wed, 1 Jan 2070 13:47:11 UTC; path=/';
+            //var x = document.cookie
+            //alert(msg);
 
              jQuery.noConflict(); 
              $('#modal-container-edit').modal('show');
-            
+             
         }
+        
     </script>
+
+     
+
+        
 </asp:Content>
