@@ -30,9 +30,10 @@
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-            <asp:HiddenField ID="itemId" runat="server" />
 
-            <asp:DataList ID="DataList1" runat="server" Width="100%" onitemcommand="DataList1_ItemCommand" >
+            <asp:HiddenField ID="Hidden1" runat="server" />
+
+            <asp:DataList ID="DataList1" runat="server" Width="100%" >
                  
                 <HeaderTemplate>
                 <table class="table table-hover"  >
@@ -74,8 +75,8 @@
                             
                             <td>
                                 <input type="button" name="Submit" value="Edit" onclick="edit(this)" class="btn btn-default"/>
+                                <input type="button" name="Submit" value="Remove" onclick="remove(this)" class="btn btn-danger"/>
                                 
-                                <asp:Button ID="Button3" class="btn btn-danger" runat="server"  Text="Remove" CommandName="remove" />
                             </td>                           
                         </tr>
                      </tbody>   
@@ -87,7 +88,7 @@
                     			
 			<a id="modal-add" href="#modal-container-add" role="button" class="btn btn-primary" data-toggle="modal">Add Item</a>
             
-            <asp:Button ID="Button4" runat="server" Text="Test" OnClick="Test"/>
+             
             <!-- Start Add Item Modal -->
 			<div class="modal fade" id="modal-container-add" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
@@ -158,6 +159,40 @@
 				</div>
 			</div>
             <!-- End Edit Item Modal -->
+            <!-- Start Remove Item Modal -->
+			<div class="modal fade" id="modal-container-remove" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
+							<h4 class="modal-title" id="remove-modal-label">
+								 Remove
+							</h4>
+						</div>
+                        <div class="modal-body">
+                            <br />
+                            <br />
+                            <h4 class="modal-title"  >
+								 Do you want to remove this garment type?
+							</h4>
+                            <br />
+                            <br />
+                        </div>
+						
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Cancel
+							</button>
+                            <asp:Button ID="Button3" runat="server" Text="Ok" OnClick="Save_Remove_Click" type="button" class="btn btn-primary" UseSubmitBehavior="false"  data-dismiss="modal"/>
+						
+						</div>
+					</div>
+				</div>
+			</div>
+            <!-- End Remove Item Modal -->
 		</div>
 	</div>
 </div>
@@ -168,15 +203,19 @@
     <script src="js/cookie.min.js"></script>
     
     <script>
+        $(".modal-body input").val("")
+
         function edit(obj) {
             
             var itemId = $(obj).parent().siblings(":first").text();
-            //var msg = document.getElementById('itemId');
+            document.getElementById('<% =Hidden1.ClientID %>').value = itemId;
+            //var test = document.getElementById('<% =Hidden1.ClientID %>').value;
+            //alert(test);
             //var value = msg.value;
             //msg.value = '1';
                 //$(obj).parent().siblings(":first").text();
             
-            document.cookie = "itemId =" + itemId + ";" 
+            //document.cookie = "itemId =" + itemId + ";" 
             //document.cookie = "itemId=" + itemId + "; expires=Wed, 1 Jan 2070 13:47:11 UTC; path=/"
             //document.cookie = 'itemId =' + display + '; expires=Wed, 1 Jan 2070 13:47:11 UTC; path=/';
             //var x = document.cookie
@@ -185,6 +224,16 @@
              jQuery.noConflict(); 
              $('#modal-container-edit').modal('show');
              
+        }
+
+        function remove(obj) {
+
+            var itemId = $(obj).parent().siblings(":first").text();
+            document.getElementById('<% =Hidden1.ClientID %>').value = itemId;
+
+            jQuery.noConflict();
+            $('#modal-container-remove').modal('show');
+
         }
         
     </script>
