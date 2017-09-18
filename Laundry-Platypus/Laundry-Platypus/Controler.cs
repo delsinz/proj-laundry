@@ -10,8 +10,8 @@ namespace Laundry_Platypus
     {
         private readonly ConcurrentDictionary<string, Person> _users = new ConcurrentDictionary<string, Person>();
         private readonly ConcurrentDictionary<string, Order> _orders = new ConcurrentDictionary<string, Order>();
-        private List<Driver> drivers = new List<Driver>();
-        private List<Packer> packers = new List<Packer>();
+        public List<Driver> drivers = new List<Driver>();
+        public List<Packer> packers = new List<Packer>();
         public Controler(ConcurrentDictionary<string, Person> users, ConcurrentDictionary<string, Order> orders)
         {
             _users = users;
@@ -21,7 +21,7 @@ namespace Laundry_Platypus
             foreach (Person person_t in personlist)
             {
                 //driver
-                if (person_t.Roleid == "2")
+                if (person_t.Roleid == "3")
                 {
                     Driver driver_t = new Driver(person_t.ID,person_t.Name, person_t.Contact, person_t.Active, person_t.Selfie, person_t.Passwd, person_t.Roleid);
                     foreach (Order order_t in orderlist)
@@ -41,7 +41,7 @@ namespace Laundry_Platypus
                     drivers.Add(driver_t);
                 }
                 //packer
-                else if (person_t.Roleid == "3")
+                else if (person_t.Roleid == "2")
                 {
                     Packer packer_t = new Packer(person_t.ID, person_t.Name, person_t.Contact, person_t.Active, person_t.Selfie, person_t.Passwd, person_t.Roleid);
                     foreach (Order order_t in orderlist)
