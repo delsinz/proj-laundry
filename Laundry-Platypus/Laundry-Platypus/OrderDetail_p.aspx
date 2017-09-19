@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-md-12">
                     <a href="driverOrderMain.html" class="btn btn-default">Back</a>
-                    <input type="submit" class="btn btn btn-default" value="Complete Pick-Up">
+                   <asp:Button ID="Button1" runat="server" Text="Complete Pick-Up" class="btn btn btn-default" type="submit" OnClick="Button1_Click" />
                 </div>
             </div>
         </div>

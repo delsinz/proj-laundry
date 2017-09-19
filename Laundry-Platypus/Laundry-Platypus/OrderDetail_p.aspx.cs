@@ -11,6 +11,7 @@ namespace Laundry_Platypus
 {
     public partial class OrderDetail : System.Web.UI.Page
     {
+        string orderid=null;
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -21,7 +22,8 @@ namespace Laundry_Platypus
             dt.Columns.Add("amount", Type.GetType("System.String"));
             Order order=null;
             string garment;
-            string orderid = Request["orderid"].ToString();
+             orderid = Request["orderid"].ToString();
+            Session["order_id"] = orderid;
             if (orderid != null) { order=System_L.Instance.GetOrder(orderid); }
             if (order != null)
             {
@@ -44,6 +46,21 @@ namespace Laundry_Platypus
                 }
                 DataList1.DataSource = dt;
                 DataList1.DataBind();
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            orderid = Session["order_id"].ToString();
+            if (orderid != null)
+            {
+                if (System_L.Instance.Distribute(orderid))
+                {
+                    Response.Write("< script lanuage = javascript > alert('success'); window.location.href = 'driveroverview.aspx' </ script >");
+                }
+                else {
+                    Response.Write("< script lanuage = javascript > alert('failed'); window.location.href = 'driveroverview.aspx' </ script >");
+                }
             }
         }
     }

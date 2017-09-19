@@ -91,6 +91,7 @@ namespace Laundry_Platypus
                         if (order_t.ID.Equals(order.ID))
                         {
                             //_orders.TryUpdate;
+                            //Clients
                         }
                     }
 
@@ -184,6 +185,13 @@ namespace Laundry_Platypus
             return order;
 
         }
-
+        public bool Distribute(string order_id)
+        {
+            if (controler.Distruibute(order_id))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
