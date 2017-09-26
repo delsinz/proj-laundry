@@ -37,16 +37,16 @@ namespace Laundry_Platypus
             // Remainder of constructor ...
             //Initial orderlist
             //Order order_test = new Order("test_ID","test_state");
-           // Order order_test = new Order("test_ID", "test_state");
+            // Order order_test = new Order("test_ID", "test_state");
             //_orders.TryAdd("test", order_test);
             //orderstate>0 means available, 0 means deactive -1 means done
             DataSet dataset = Datacon.getDataset("SELECT * FROM tb_Order,tb_Order_state,tb_User WHERE order_state>0 and tb_Order.customer_id=tb_User.user_id and tb_Order.order_state=tb_Order_state.state_id", "Order");
             foreach (DataRow pRow in dataset.Tables["Order"].Rows)
             {
-                Order order_test = new Order(pRow["order_id"].ToString(), pRow["order_state"].ToString(), pRow["order_date"].ToString(), pRow["customer_id"].ToString(), pRow["user_id"].ToString(), pRow["user_name"].ToString(), pRow["state_name"].ToString());
+                Order order_test = new Order(pRow["order_id"].ToString(), pRow["order_state"].ToString(), pRow["order_date"].ToString(), pRow["customer_id"].ToString(), pRow["user_id"].ToString(), pRow["user_name"].ToString(), pRow["state_name"].ToString(), pRow["garment"].ToString());
                 _orders.TryAdd(pRow["order_id"].ToString(), order_test);
             }
-           // System.Console.WriteLine("success");
+            // System.Console.WriteLine("success");
             dataset = Datacon.getDataset("SELECT * FROM tb_User ", "User");
             foreach (DataRow pRow in dataset.Tables["User"].Rows)
             {
@@ -60,12 +60,12 @@ namespace Laundry_Platypus
         public IEnumerable<Order> GetAllOrders()
         {
             return _orders.Values;
-         }
+        }
         public Person GetUser(string userid, string passwd)
         {
             Person person_t;
             //System.Console.WriteLine(userid+ passwd);
-            if (_users.ContainsKey(userid)==true)
+            if (_users.ContainsKey(userid) == true)
             {
                 if (_users.TryGetValue(userid, out person_t))
                 {
@@ -91,6 +91,7 @@ namespace Laundry_Platypus
                         if (order_t.ID.Equals(order.ID))
                         {
                             //_orders.TryUpdate;
+                            //Clients
                         }
                     }
 
@@ -100,7 +101,7 @@ namespace Laundry_Platypus
         }
         public IEnumerable<Order> GetAllOrders(Person person)
         {
-            if (person.Roleid =="3")
+            if (person.Roleid == "3")
             {
                 //This is driver
                 ConcurrentDictionary<string, Order> orders_t = new ConcurrentDictionary<string, Order>();
@@ -136,7 +137,7 @@ namespace Laundry_Platypus
             if (person.Roleid == "4")
             {
                 //This is client
-               
+
             }
             return null;
         }
@@ -151,6 +152,46 @@ namespace Laundry_Platypus
             {
                 return false;
             }
+        }
+        public Order GetOrder(string order_id)
+        {
+            Order order=null;
+            controler.drivers.ForEach((x) =>
+            {
+                //Console.WriteLine(string.Format("姓名：{0}，年龄：{1}", x.Name, x.Age));
+                if (x.getOrder_d(order_id) != null)
+                {
+                    order = x.getOrder_d(order_id);
+
+                }
+                else if (x.getOrder_p(order_id) != null)
+                {
+                    order = x.getOrder_p(order_id);
+                }
+            });
+            controler.packers.ForEach((x) =>
+            {
+                //Console.WriteLine(string.Format("姓名：{0}，年龄：{1}", x.Name, x.Age));
+                if (x.getOrder_d(order_id) != null)
+                {
+                    order = x.getOrder_d(order_id);
+
+                }
+                else if (x.getOrder_p(order_id) != null)
+                {
+                    order = x.getOrder_p(order_id);
+                }
+            });
+            return order;
+
+        }
+        public bool Distribute(string order_id)
+        {
+            if (controler.Distruibute(order_id))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

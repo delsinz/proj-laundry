@@ -16,7 +16,8 @@ namespace Laundry_Platypus
         public string Comment { get; set; }
         public string Product { get; set; }
         public string UserID { get; set; }
-        public Order(string id, string state, string date, string customerID, string userID, string customerName, string stateName)
+        public string Garment { get; set; }
+        public Order(string id, string state, string date, string customerID, string userID, string customerName, string stateName,string garment)
         {
             ID = id;
             State = state;
@@ -25,6 +26,7 @@ namespace Laundry_Platypus
             UserID = userID;
             CustomerName = customerName;
             StateName = stateName;
+            Garment =garment;
         }
     }
 }
