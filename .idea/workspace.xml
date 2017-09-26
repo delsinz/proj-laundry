@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d807f44b-5e49-4796-b116-22962e4b5e2b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Laundry-Platypus/.vs/config/applicationhost.config" afterPath="$PROJECT_DIR$/Laundry-Platypus/.vs/config/applicationhost.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageEmployee.aspx" afterPath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageEmployee.aspx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageEmployee.aspx.cs" afterPath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageEmployee.aspx.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageEmployee.aspx.designer.cs" afterPath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageEmployee.aspx.designer.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageItem.aspx" afterPath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageItem.aspx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageItem.aspx.cs" afterPath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageItem.aspx.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageItem.aspx.designer.cs" afterPath="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/ManageItem.aspx.designer.cs" />
     </list>
     <ignored path="proj-laundry.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="office-item-view.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="office-item-view.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/office-view/office-item/office-item-view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1649">
+            <state relative-caret-position="787">
               <caret line="155" column="65" lean-forward="false" selection-start-line="155" selection-start-column="36" selection-end-line="155" selection-end-column="65" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -42,23 +44,19 @@
       <file leaf-file-name="itemStyle.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/css/itemStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="29">
+              <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="office-employee-view.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="office-employee-view.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/office-view/office-employee/office-employee-view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1938">
-              <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
+            <state relative-caret-position="443">
+              <caret line="157" column="65" lean-forward="true" selection-start-line="157" selection-start-column="65" selection-end-line="157" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,7 +64,7 @@
       <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/office-view/office-employee/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
+            <state relative-caret-position="58">
               <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="2" />
               <folding />
             </state>
@@ -76,7 +74,7 @@
       <file leaf-file-name="driverOrderMain.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/driver-view/driverOrderMain.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3230">
+            <state relative-caret-position="2465">
               <caret line="85" column="37" lean-forward="false" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
               <folding />
             </state>
@@ -96,7 +94,7 @@
       <file leaf-file-name="officeSales.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/office-view/office-sales/officeSales.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
+            <state relative-caret-position="667">
               <caret line="23" column="51" lean-forward="false" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
               <folding />
             </state>
@@ -106,7 +104,7 @@
       <file leaf-file-name="pickupOrder.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/driver-view/pickupOrder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12806">
+            <state relative-caret-position="9773">
               <caret line="337" column="27" lean-forward="false" selection-start-line="337" selection-start-column="27" selection-end-line="337" selection-end-column="27" />
               <folding />
             </state>
@@ -116,7 +114,7 @@
       <file leaf-file-name="officeOrder.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/office-view/office-order/officeOrder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
+            <state relative-caret-position="29">
               <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
               <folding />
             </state>
@@ -156,9 +154,9 @@
         <option value="$PROJECT_DIR$/frontend/packer-view/js/count.js" />
         <option value="$PROJECT_DIR$/frontend/packer-view/needUnpackedOrder.html" />
         <option value="$PROJECT_DIR$/frontend/office-view/office-sales/officeSales.html" />
-        <option value="$PROJECT_DIR$/frontend/office-view/office-employee/office-employee-view.html" />
         <option value="$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/css/itemStyle.css" />
         <option value="$PROJECT_DIR$/frontend/office-view/office-item/office-item-view.html" />
+        <option value="$PROJECT_DIR$/frontend/office-view/office-employee/office-employee-view.html" />
       </list>
     </option>
   </component>
@@ -168,10 +166,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="width" value="1296" />
-    <option name="height" value="1388" />
+    <option name="height" value="1178" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -188,7 +186,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,6 +255,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -378,17 +376,19 @@
       <workItem from="1505549785927" duration="628000" />
       <workItem from="1505566673423" duration="2014000" />
       <workItem from="1505658271966" duration="206000" />
+      <workItem from="1506300535488" duration="898000" />
+      <workItem from="1506389303391" duration="10705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32714000" />
+    <option name="totallyTimeSpent" value="44317000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="-13" width="2586" height="1396" extended-state="6" />
+    <frame x="-11" y="-11" width="2070" height="1114" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19296876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1928711" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -695,7 +695,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/office-view/office-employee/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
+        <state relative-caret-position="58">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="2" />
           <folding />
         </state>
@@ -711,27 +711,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/office-view/office-order/officeOrder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="29">
           <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/office-view/office-employee/office-employee-view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/office-view/office-sales/officeSales.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
+        <state relative-caret-position="667">
           <caret line="23" column="51" lean-forward="false" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
           <folding />
         </state>
@@ -739,7 +727,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/driver-view/pickupOrder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12806">
+        <state relative-caret-position="9773">
           <caret line="337" column="27" lean-forward="false" selection-start-line="337" selection-start-column="27" selection-end-line="337" selection-end-column="27" />
           <folding />
         </state>
@@ -747,7 +735,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/driver-view/driverOrderMain.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3230">
+        <state relative-caret-position="2465">
           <caret line="85" column="37" lean-forward="false" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
           <folding />
         </state>
@@ -762,21 +750,29 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/style.css" />
-    <entry file="file://$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/css/itemStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/office-view/office-item/office-item-view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
+        <state relative-caret-position="787">
           <caret line="155" column="65" lean-forward="false" selection-start-line="155" selection-start-column="36" selection-end-line="155" selection-end-column="65" />
           <folding>
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Laundry-Platypus/Laundry-Platypus/css/itemStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/office-view/office-employee/office-employee-view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="157" column="65" lean-forward="true" selection-start-line="157" selection-start-column="65" selection-end-line="157" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -75,8 +75,7 @@
                             
                             <td>
                                 <input type="button" name="Submit" value="Edit" onclick="edit(this)" class="btn btn-default"/>
-                                <input type="button" name="Submit" value="Remove" onclick="remove(this)" class="btn btn-danger"/>
-                                
+                                <input type="button" name="Submit" value="Remove" onclick="remove(this)" class="btn btn-danger"/>                               
                             </td>                           
                         </tr>
                      </tbody>   

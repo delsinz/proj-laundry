@@ -62,8 +62,11 @@ namespace Laundry_Platypus
 
             if (NameTextBox.Text != null && AbbrTextBox.Text != null)
             {
-             Datacon.execSQL("UPDATE tb_Garment_type SET `type_name` = '" + NameTextBox.Text + "', `abbreviation` = '" + AbbrTextBox.Text + "' WHERE `garment_id` = "+ get_item_id + "");
-             
+                Datacon.execSQL("UPDATE tb_Garment_type SET `type_name` = '" + NameTextBox.Text + "', `abbreviation` = '" + AbbrTextBox.Text + "' WHERE `garment_id` = " + get_item_id + "");
+
+            }
+            else {
+                Response.Write("<script lanuage=javascript>alert('Please input required information');window.location.href='ManageItem.aspx'</script>");
             }
              
             Page_Load(sender, e);
@@ -73,9 +76,13 @@ namespace Laundry_Platypus
         protected void Add_Click(object sender, EventArgs e)
         {
             //Datacon.execSQL("INSERT INTO tb_Garment_type (type_name, abbreviation) VALUES ('Short','STS');");
-            if (AddNameTextBox!=null && AddAbbrTextBox!=null) {
-                Datacon.execSQL("INSERT INTO tb_Garment_type (`type_name`,`abbreviation`,`activate`) VALUES ('" + 
+            if (AddNameTextBox != null && AddAbbrTextBox != null)
+            {
+                Datacon.execSQL("INSERT INTO tb_Garment_type (`type_name`,`abbreviation`,`activate`) VALUES ('" +
                     AddNameTextBox.Text + "','" + AddAbbrTextBox.Text + "', '1');");
+            }
+            else {
+                Response.Write("<script lanuage=javascript>alert('Please input required information');window.location.href='ManageItem.aspx'</script>");
             }
 
             Page_Load(sender, e);
