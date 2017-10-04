@@ -15,38 +15,29 @@ namespace Laundry_Platypus
         Table tb;
         protected void Page_Load(object sender, EventArgs e)
         {
-            number_of_garment = (int)Session["number_of_garments"];
+            number_of_garment = Int32.Parse(Session["number_of_garments"].ToString());
             dataset = LoadGarmentTypes();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("garment_number", Type.GetType("System.String"));
+            for (int i = 0; i < number_of_garment; i++)
+            {
+                DataRow dr = dt.NewRow();
+                dr["garment_number"] = 0;
+                dt.Rows.Add(dr);
+            }
+            DataList1.DataSource = dt;
+            DataList1.DataBind();
             if (dataset != null)
             {
                 tb = new Table();
 
-                for (int i = 0; i < number_of_garment; i++)
+                for (int i = 0; i < DataList1.Items.Count; i++)
                 {
-                    TableRow row = new TableRow();
-
-
-                    TableCell tc1 = new TableCell();
-                    TableCell tc2 = new TableCell();
-
-                    //Make dropdown list
-                    DropDownList dpl = new DropDownList();
-                    dpl.ID = i.ToString();
-
-                    dpl.DataSource = dataset;
-                    dpl.DataTextField = "type_name";
-                    dpl.DataValueField = "garment_id";
-                    dpl.DataBind();
-                    tc1.Controls.Add(dpl);
-                    TextBox textb = new TextBox();
-                    //text
-                    tc2.Controls.Add(textb);
-
-                    //add to table
-                    row.Cells.Add(tc1);
-                    row.Cells.Add(tc2);
-                    tb.Rows.Add(row);
-
+                    DropDownList ddl = DataList1.Items[i].FindControl("DropDownList1") as DropDownList;
+                    ddl.DataSource = dataset;
+                    ddl.DataTextField = "type_name";
+                    ddl.DataValueField = "garment_id";
+                    ddl.DataBind();
                 }
             }
         }
@@ -56,7 +47,7 @@ namespace Laundry_Platypus
             DataSet ds = null;
             try
             {
-                ds = Datacon.getDataset("SELECT * FROM `tb_Garment_type`;", "Types");
+                ds = Datacon.getDataset("SELECT * FROM tb_Garment_type;", "Types");
             }
             catch (Exception ex)
             {
@@ -65,13 +56,13 @@ namespace Laundry_Platypus
             return ds;
         }
 
-        private void return_click()
+        protected void return_click(object sender, EventArgs e)
         {
             Response.Redirect("AddOrder.aspx");
 
         }
 
-        private void save_click()
+        protected void save_click(object sender, EventArgs e)
         {
             //read data from session
             string time_id = (string)Session["order_id"];

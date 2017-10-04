@@ -9,7 +9,7 @@ namespace Laundry_Platypus
     public class Controler
     {
         private readonly ConcurrentDictionary<string, Person> _users = new ConcurrentDictionary<string, Person>();
-        private readonly ConcurrentDictionary<string, Order> _orders = new ConcurrentDictionary<string, Order>();
+        public readonly ConcurrentDictionary<string, Order> _orders = new ConcurrentDictionary<string, Order>();
         public List<Driver> drivers = new List<Driver>();
         public List<Packer> packers = new List<Packer>();
         public Controler(ConcurrentDictionary<string, Person> users, ConcurrentDictionary<string, Order> orders)
@@ -67,15 +67,15 @@ namespace Laundry_Platypus
             Order order = null;
             this.drivers.ForEach((x) =>
             {
-                //Console.WriteLine(string.Format("姓名：{0}，年龄：{1}", x.Name, x.Age));
                 if (x.getOrder_d(order_id) != null)
                 {
                     order = x.getOrder_d(order_id);
-
+                    x.rmOrder_d(order_id);
                 }
                 else if (x.getOrder_p(order_id) != null)
                 {
                     order = x.getOrder_p(order_id);
+                    x.rmOrder_p(order_id);
                 }
             });
             this.packers.ForEach((x) =>
@@ -83,11 +83,13 @@ namespace Laundry_Platypus
                 if (x.getOrder_d(order_id) != null)
                 {
                     order = x.getOrder_d(order_id);
+                    x.rmOrder_d(order_id);
 
                 }
                 else if (x.getOrder_p(order_id) != null)
                 {
                     order = x.getOrder_p(order_id);
+                    x.rmOrder_p(order_id);
                 }
             });
             if (order != null)
@@ -114,6 +116,9 @@ namespace Laundry_Platypus
                     }
                     if (drivers[n].addOrder_p(order) > 0)
                     {
+                        Order order_t = order;
+                        order_t.UserID = drivers[n].ID;
+                        _orders.TryUpdate(order.ID,order_t,order);
                         return true;
                     }
                 }
@@ -130,6 +135,9 @@ namespace Laundry_Platypus
                     }
                     if (drivers[n].addOrder_d(order) > 0)
                     {
+                        Order order_t = order;
+                        order_t.UserID = drivers[n].ID;
+                        _orders.TryUpdate(order.ID, order_t, order);
                         return true;
                     }
                 }
@@ -144,7 +152,10 @@ namespace Laundry_Platypus
                             n = t;
                         }
                     }
-                    if (packers[n].addOrder_p(order) > 0) { return true; }
+                    if (packers[n].addOrder_p(order) > 0) {
+                        Order order_t = order;
+                        order_t.UserID = packers[n].ID;
+                        _orders.TryUpdate(order.ID, order_t, order); return true; }
                 }
                 else if (order.State == "3")
                 {
@@ -157,11 +168,39 @@ namespace Laundry_Platypus
                             n = t;
                         }
                     }
-                    if (packers[n].addOrder_d(order) > 0) { return true; }
+                    if (packers[n].addOrder_d(order) > 0) {
+                        Order order_t = order;
+                        order_t.UserID = packers[n].ID;
+                        _orders.TryUpdate(order.ID, order_t, order);
+                        return true; }
                 }
             }
             return false;
             
+        }
+        public IEnumerable<Order> GetOrderList(Person person)
+        {
+            IEnumerable<Order> orders_t=null;
+            foreach (Driver driver in drivers)
+            {
+                if (driver.ID == person.ID)
+                {
+                    List<Order> orders_tL = driver.pickup_list;
+                    orders_tL.AddRange(driver.dropoff_list);
+                   orders_t = orders_tL;
+                    
+                }
+            }
+            foreach (Packer packer in packers)
+            {
+                if (packer.ID == person.ID)
+                {
+                    List<Order> orders_tL = packer.pickup_list;
+                    orders_tL.AddRange(packer.dropoff_list);
+                    orders_t = orders_tL;
+                }
+            }
+            return orders_t;
         }
     }
 }

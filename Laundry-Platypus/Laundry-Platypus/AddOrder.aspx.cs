@@ -36,7 +36,7 @@ namespace Laundry_Platypus
             Session["order_id"] = time_id;
             Session["order_date"] = date.Text;
             Session["customer_id"] = CustomerDropList.Text;
-            Session["assignee_id"] = AssigneeDropList.Text;
+            //Session["assignee_id"] = AssigneeDropList.Text;
             Session["number_of_garments"] = garment_number.Text;
 
             Response.Redirect("AddOrderDetail.aspx");
@@ -49,12 +49,14 @@ namespace Laundry_Platypus
 
         }
 
-        protected void add_Click()
+        protected void add_Click(object sender, EventArgs e)
         {
-            TableCell cel1 = new TableCell();
-            TableCell cel2 = new TableCell();
-            DropDownList droplist = new DropDownList();
-            droplist.ID = Convert.ToString("");
+            //TableCell cel1 = new TableCell();
+            //TableCell cel2 = new TableCell();
+            //DropDownList droplist = new DropDownList();
+            //droplist.ID = Convert.ToString("");
+            Session["number_of_garments"] = garment_number.Text;
+            Response.Write("<script lanuage=javascript>window.location.href='AddorderDetail.aspx'</script>");
         }
 
         private void LoadGarmentTypes()
@@ -65,10 +67,10 @@ namespace Laundry_Platypus
                 DataSet ds = Datacon.getDataset("SELECT * FROM `tb_Garment_type`;", "Types");
 
                 Console.WriteLine("reading data");
-                garment_type.DataSource = ds.Tables["Types"];
-                garment_type.DataTextField = "type_name";
-                garment_type.DataValueField = "garment_id";
-                garment_type.DataBind();
+                //garment_type.DataSource = ds.Tables["Types"];
+                //garment_type.DataTextField = "type_name";
+                //garment_type.DataValueField = "garment_id";
+                //garment_type.DataBind();
             }
             catch (Exception ex)
             {
@@ -81,12 +83,12 @@ namespace Laundry_Platypus
 
             try
             {
-                DataSet ds = Datacon.getDataset("SELECT * FROM `tb_User` WHERE role_id = 4;", "Customers");
+                DataSet ds = Datacon.getDataset("SELECT * FROM tb_User WHERE role_id = 4;", "Customers");
 
-                garment_type.DataSource = ds.Tables["Customers"];
-                garment_type.DataTextField = "first_name" + "last_name";
-                garment_type.DataValueField = "user_id";
-                garment_type.DataBind();
+                CustomerDropList.DataSource = ds.Tables["Customers"].DefaultView;
+                CustomerDropList.DataTextField = "first_name";
+                CustomerDropList.DataValueField = "user_id";
+                CustomerDropList.DataBind();
             }
             catch (Exception ex)
             {
@@ -102,10 +104,10 @@ namespace Laundry_Platypus
             {
                 DataSet ds = Datacon.getDataset("SELECT * FROM `tb_User` WHERE role_id = 2;", "Drivers");
 
-                garment_type.DataSource = ds.Tables["Drivers"];
-                garment_type.DataTextField = "first_name" + "last_name";
-                garment_type.DataValueField = "user_id";
-                garment_type.DataBind();
+               // garment_type.DataSource = ds.Tables["Drivers"];
+                //garment_type.DataTextField = "first_name" + "last_name";
+                //garment_type.DataValueField = "user_id";
+                //garment_type.DataBind();
             }
             catch (Exception ex)
             {

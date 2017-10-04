@@ -45,12 +45,11 @@ $(function () {
     }
 
     // Add a client-side hub method that the server will call
-    clientHub.client.updateOrder = function (order) {
+    clientHub.client.addOrder = function (order) {
         var displayOrder = formatOrder(order),
             $row = $(rowTemplate.supplant(displayOrder));
 
-        $orderTableBody.find('tr[data-OrderID=' + order.ID + ']')
-            .replaceWith($row);
+        $orderTableBody.append(rowTemplate.supplant(order));
     };
 
     //insert order 

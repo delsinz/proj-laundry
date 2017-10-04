@@ -105,7 +105,7 @@ namespace Laundry_Platypus
             {
                 //This is driver
                 ConcurrentDictionary<string, Order> orders_t = new ConcurrentDictionary<string, Order>();
-                IEnumerable<Order> orderlist = _orders.Values;
+                IEnumerable<Order> orderlist = controler.GetOrderList(person);
                 foreach (Order order_t in orderlist)
                 {
                     if (order_t.UserID == person.ID)
@@ -119,7 +119,7 @@ namespace Laundry_Platypus
             {
                 //This is packer
                 ConcurrentDictionary<string, Order> orders_t = new ConcurrentDictionary<string, Order>();
-                IEnumerable<Order> orderlist = _orders.Values;
+                IEnumerable<Order> orderlist = controler.GetOrderList(person);
                 foreach (Order order_t in orderlist)
                 {
                     if (order_t.UserID == person.ID)
@@ -132,7 +132,7 @@ namespace Laundry_Platypus
             if (person.Roleid == "1")
             {
                 //This is officeworker
-                return _orders.Values;
+                return controler._orders.Values;
             }
             if (person.Roleid == "4")
             {

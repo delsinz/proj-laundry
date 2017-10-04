@@ -16,11 +16,11 @@ namespace Laundry_Platypus
             {
                 if (Session["role_id"].ToString() == "1")
                 {
-                    Response.Redirect("manageorder.aspx?orderid=" + orderid);
+                    Response.Redirect("orderdetail_p.aspx?orderid=" + orderid);
                 }
                 if (Session["role_id"].ToString() == "2")
                 {
-                    Response.Redirect("orderdetail_pp.aspx?orderid=" + orderid);
+                    Response.Redirect("orderdetail_p.aspx?orderid=" + orderid);
                 }
                 if (Session["role_id"].ToString() == "3")
                 {

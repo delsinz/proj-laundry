@@ -46,8 +46,8 @@ namespace Laundry_Platypus
     }
     public class Driver : Producer
     {
-        private List<Order> pickup_list = new List<Order>();
-        private List<Order> dropoff_list = new List<Order>();
+        public List<Order> pickup_list = new List<Order>();
+        public List<Order> dropoff_list = new List<Order>();
 
         public Driver(string id, string name, string contact, string active, string selfie, string passwd, string roleid) : base(id, name, contact, active, selfie, passwd, roleid)
         {
@@ -71,6 +71,30 @@ namespace Laundry_Platypus
                 }
             }
             return null;
+        }
+        public bool rmOrder_d(string ID)
+        {
+            foreach (Order order in dropoff_list)
+            {
+                if (order.ID == ID)
+                {
+                    dropoff_list.Remove(order);
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool rmOrder_p(string ID)
+        {
+            foreach (Order order in pickup_list)
+            {
+                if (order.ID == ID)
+                {
+                    pickup_list.Remove(order);
+                    return true;
+                }
+            }
+            return false;
         }
         public List<Order> getOrder_p()
         {
@@ -131,8 +155,8 @@ namespace Laundry_Platypus
     }
     public class Packer : Producer
     {
-        private List<Order> pickup_list = new List<Order>();
-        private List<Order> dropoff_list = new List<Order>();
+        public List<Order> pickup_list = new List<Order>();
+        public List<Order> dropoff_list = new List<Order>();
 
         public Packer(string id, string name, string contact, string active, string selfie, string passwd, string roleid) : base(id, name, contact, active, selfie, passwd, roleid)
         {
@@ -157,6 +181,18 @@ namespace Laundry_Platypus
             }
             return null;
         }
+        public bool rmOrder_p(string ID)
+        {
+            foreach (Order order in pickup_list)
+            {
+                if (order.ID == ID)
+                {
+                    pickup_list.Remove(order);
+                    return true;
+                }
+            }
+            return false;
+        }
         public List<Order> getOrder_p()
         {
 
@@ -172,6 +208,18 @@ namespace Laundry_Platypus
                 }
             }
             return null;
+        }
+        public bool rmOrder_d(string ID)
+        {
+            foreach (Order order in dropoff_list)
+            {
+                if (order.ID == ID)
+                {
+                    dropoff_list.Remove(order);
+                    return true;
+                }
+            }
+            return false;
         }
         public List<Order> getOrder_d()
         {
