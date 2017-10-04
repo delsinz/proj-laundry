@@ -55,7 +55,13 @@ namespace Laundry_Platypus
             //TableCell cel2 = new TableCell();
             //DropDownList droplist = new DropDownList();
             //droplist.ID = Convert.ToString("");
+            long time_id = long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss"));
+
+            Session["order_id"] = time_id;
+            Session["order_date"] = date.Text;
+            //Session["assignee_id"] = AssigneeDropList.Text;
             Session["number_of_garments"] = garment_number.Text;
+            Session["customer_id"] = CustomerDropList.SelectedValue;
             Response.Write("<script lanuage=javascript>window.location.href='AddorderDetail.aspx'</script>");
         }
 

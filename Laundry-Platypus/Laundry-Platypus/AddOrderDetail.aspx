@@ -20,7 +20,7 @@
                     <ItemTemplate>
                         <tbody>
                             <tr>
-                                <td width="25%"> <asp:DropDownList ID="DropDownList1" runat="server" ></asp:DropDownList></td>
+                                <td width="25%"> <asp:DropDownList ID="DropDownList1" runat="server"  ></asp:DropDownList></td>
                                 <td width="25%">
                                     <div>
                                         <div class="input-group">
@@ -53,6 +53,7 @@
                 <div class="col-md-12">
                     <a href="driverOrderMain.html" class="btn btn-default">Back</a>
                    <asp:Button ID="return" runat="server" Text="Return" onClick ="return_click"/>
+                    <asp:TextBox ID="price" runat="server"></asp:TextBox>
                    <asp:Button ID="save" runat="server" Text="Save Order" onClick ="save_click"/>
                 </div>
             </div>

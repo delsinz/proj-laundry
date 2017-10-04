@@ -234,6 +234,7 @@
     </Content>
     <Content Include="style-sidebar.css" />
     <Content Include="table.html" />
+    <Content Include="ViewForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -351,6 +352,13 @@
     </Compile>
     <Compile Include="AddOrderDetail.aspx.designer.cs">
       <DependentUpon>AddOrderDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm.aspx.cs">
+      <DependentUpon>ViewForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewForm.aspx.designer.cs">
+      <DependentUpon>ViewForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

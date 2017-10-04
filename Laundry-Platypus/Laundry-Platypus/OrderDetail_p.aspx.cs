@@ -56,7 +56,7 @@ namespace Laundry_Platypus
             {
                 if (System_L.Instance.Distribute(orderid))
                 {
-                    Response.Write("< script lanuage = javascript > alert('success'); window.location.href = 'driveroverview.aspx' </ script >");
+                    Response.Redirect("driveroverview.aspx");
                 }
                 else {
                     Response.Write("< script lanuage = javascript > alert('failed'); window.location.href = 'driveroverview.aspx' </ script >");

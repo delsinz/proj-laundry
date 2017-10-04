@@ -16,8 +16,7 @@
                                 <tr>
                                     <th>Type </th>
                                     <th>Quantity </th>
-                                    <th>Type </th>
-                                    <th>Quantity </th>
+                                    
                                 </tr>
                             </thead>
                     </HeaderTemplate>
@@ -29,16 +28,12 @@
                                     <div>
                                         <div class="input-group">
                                             <span class="input-group-btn">
-                                                <button type="button" class="quantity-left-minus1 btn btn-danger btn-number" data-type="minus" data-field="">
-                                                    <span class="glyphicon glyphicon-minus"></span>
-                                                </button>
+                                                
                                             </span>
                                             
                                             <asp:TextBox ID="TextBox1"  type="text" runat="server" class="form-control input-number" min="0" max="100" name="quantity" Text='<%#DataBinder.Eval(Container.DataItem, "amount")%>'></asp:TextBox>
                                             <span class="input-group-btn">
-                                                <button type="button" class="quantity-right-plus1 btn btn-success btn-number" data-type="plus" data-field="">
-                                                    <span class="glyphicon glyphicon-plus"></span>
-                                                </button>
+                                               
                                             </span>
                                         </div>
                                     </div>
@@ -56,7 +51,7 @@
                 </div>
                 <div class="col-md-12">
                     <a href="driverOrderMain.html" class="btn btn-default">Back</a>
-                   <asp:Button ID="Button1" runat="server" Text="Complete Pick-Up" class="btn btn btn-default" type="submit" OnClick="Button1_Click" />
+                   <asp:Button ID="Button1" runat="server" Text="Complete " class="btn btn btn-default" type="submit" OnClick="Button1_Click" />
                 </div>
             </div>
         </div>

@@ -15,29 +15,32 @@ namespace Laundry_Platypus
         Table tb;
         protected void Page_Load(object sender, EventArgs e)
         {
-            number_of_garment = Int32.Parse(Session["number_of_garments"].ToString());
-            dataset = LoadGarmentTypes();
-            DataTable dt = new DataTable();
-            dt.Columns.Add("garment_number", Type.GetType("System.String"));
-            for (int i = 0; i < number_of_garment; i++)
+            if (!Page.IsPostBack)
             {
-                DataRow dr = dt.NewRow();
-                dr["garment_number"] = 0;
-                dt.Rows.Add(dr);
-            }
-            DataList1.DataSource = dt;
-            DataList1.DataBind();
-            if (dataset != null)
-            {
-                tb = new Table();
-
-                for (int i = 0; i < DataList1.Items.Count; i++)
+                number_of_garment = Int32.Parse(Session["number_of_garments"].ToString());
+                dataset = LoadGarmentTypes();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("garment_number", Type.GetType("System.String"));
+                for (int i = 0; i < number_of_garment; i++)
                 {
-                    DropDownList ddl = DataList1.Items[i].FindControl("DropDownList1") as DropDownList;
-                    ddl.DataSource = dataset;
-                    ddl.DataTextField = "type_name";
-                    ddl.DataValueField = "garment_id";
-                    ddl.DataBind();
+                    DataRow dr = dt.NewRow();
+                    dr["garment_number"] = 0;
+                    dt.Rows.Add(dr);
+                }
+                DataList1.DataSource = dt;
+                DataList1.DataBind();
+                if (dataset != null)
+                {
+                    tb = new Table();
+
+                    for (int i = 0; i < DataList1.Items.Count; i++)
+                    {
+                        DropDownList ddl = DataList1.Items[i].FindControl("DropDownList1") as DropDownList;
+                        ddl.DataSource = dataset;
+                        ddl.DataTextField = "type_name";
+                        ddl.DataValueField = "garment_id";
+                        ddl.DataBind();
+                    }
                 }
             }
         }
@@ -65,17 +68,26 @@ namespace Laundry_Platypus
         protected void save_click(object sender, EventArgs e)
         {
             //read data from session
-            string time_id = (string)Session["order_id"];
-            string order_date = (string)Session["order_date"];
-            string customer_id = (string)Session["customer_id"];
-            string assignee_id = (string)Session["assignee_id"];
-
-            Datacon.execSQL("INSERT INTO tb_Order (`order_id`,`order_date`,`customer_id`,`user_id`,`order_state`) VALUES ('"
-               + time_id + "','" + order_date + "','" + customer_id + "','" + assignee_id + "','1');");
-
-            for (int i = 0; i < (int)Session["number_of_garments"]; i++)
+            string time_id =Session["order_id"].ToString();
+            string order_date = Session["order_date"].ToString();
+            string customer_id =Session["customer_id"].ToString();
+           // string assignee_id = Session["assignee_id"].ToString();
+            string price_t =price.Text;
+            //Datacon.execSQL("INSERT INTO tb_Order (`order_id`,`order_date`,`customer_id`,`user_id`,`order_state`) VALUES ('"
+            //  + time_id + "','" + order_date + "','" + customer_id + "','" + "0" + "','9');");
+            string garment=null;
+            foreach (DataListItem item in DataList1.Items)
             {
-                //Datacon.execSQL();
+                DropDownList ddl = item.FindControl("DropDownList1") as DropDownList;
+                string garment_id=ddl.SelectedValue;
+                TextBox textb = item.FindControl("TextBox1") as TextBox;
+                string garment_amount = textb.Text;
+                garment = garment+garment_id + "," + garment_amount + ";";
+            }
+            if (Datacon.execSQL("INSERT INTO tb_Order (order_id,order_date,customer_id,user_id,order_state,garment,total_price) VALUES ('"
+              + time_id + "','" + order_date + "','" + customer_id + "','0','9','" + garment + "','" + price_t + "');"))
+            {
+                Response.Redirect("manager.aspx");
             }
 
         }

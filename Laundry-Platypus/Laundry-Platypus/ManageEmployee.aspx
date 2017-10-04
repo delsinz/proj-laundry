@@ -113,6 +113,14 @@
                                     <asp:ListItem Text="Inactive" Value="0"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>
+                            <div class="form-group">
+                                <label for="pwd-add">Password:</label>
+                                <asp:TextBox ID="AddPassTextBox" runat="server" class="form-control"></asp:TextBox>                      
+                            </div>
+                            <div class="form-group">
+                                <label for="addr-add">Address:</label>
+                                <asp:TextBox ID="AddAddrTextBox" runat="server" class="form-control"></asp:TextBox>                      
+                            </div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">
@@ -149,6 +157,14 @@
                                     <asp:ListItem Text="Driver" Value="3"></asp:ListItem>
                                     <asp:ListItem Text="Customer" Value="4"></asp:ListItem> 
                                 </asp:DropDownList>
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd-add">New password:</label>
+                                <asp:TextBox ID="EditPassTextBox" runat="server" class="form-control"></asp:TextBox>                      
+                            </div>
+                            <div class="form-group">
+                                <label for="addr-add">Address:</label>
+                                <asp:TextBox ID="EditAddrTextBox" runat="server" class="form-control"></asp:TextBox>                      
                             </div>
                         </div>
                         <div class="modal-footer">

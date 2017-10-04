@@ -23,7 +23,8 @@ namespace Laundry_Platypus
             string get_role_id = edit_role_list.SelectedValue;
              
             if (EditNameTextBox.Text!=null) {
-                Datacon.execSQL("UPDATE tb_User SET `user_name` = '" + EditNameTextBox.Text + "', `role_id` = '" + get_role_id + "' WHERE `user_id` = " + get_user_id + "");
+                Datacon.execSQL("UPDATE tb_User SET `user_name` = '" + EditNameTextBox.Text + "', `role_id` = '" + get_role_id +
+                    "', `password` = '"+ EditPassTextBox.Text+"', `address` = '" + EditAddrTextBox.Text + "' WHERE `user_id` = " + get_user_id + "");
             }
             else {
                 Response.Write("<script lanuage=javascript>alert('Please input required information');window.location.href='ManageEmployee.aspx'</script>");
@@ -39,8 +40,8 @@ namespace Laundry_Platypus
             if (AddNameTextBox.Text != null)
             {   
                 //default password is 123 for the new user
-                Datacon.execSQL("INSERT INTO tb_User (`user_name`,`role_id`,`user_active`,`password`) VALUES ('" +
-                   AddNameTextBox.Text + "','" + add_role_id + "','" + add_status + "', '123');");
+                Datacon.execSQL("INSERT INTO tb_User (user_name,role_id,user_active,password,address) VALUES ('" +
+                   AddNameTextBox.Text + "','" + add_role_id +"','" + add_status + "', '"+AddPassTextBox.Text +"','" + AddAddrTextBox.Text +"');");
             }
             else {
                 Response.Write("<script lanuage=javascript>alert('Please input required information');window.location.href='ManageEmployee.aspx'</script>");
