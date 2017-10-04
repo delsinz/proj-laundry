@@ -15,7 +15,7 @@ $(function () {
     var clientHub = $.connection.clientHub, // the generated client-side hub proxy
         $orderTable = $('#orderTable'),
         $orderTableBody = $orderTable.find('tbody'),
-        rowTemplate = '<tr data-OrderID="{OrderID}"><td> {OrderID} </td><td> {CustomerName} </td><td > <a href="Orderdetail.aspx?orderid={OrderID}"> {StateName} </a></td></tr>';
+        rowTemplate = '<tr data-OrderID="{OrderID}"><td> {OrderID} </td><td> {CustomerName} </td><td> {Address} </td><td > <a href="Orderdetail.aspx?orderid={OrderID}"> {StateName} </a></td></tr>';
    
     function formatOrder(order) {
         return $.extend(order, {
@@ -24,7 +24,8 @@ $(function () {
             CustomerName: order.CustomerName,
             StateName: order.StateName,
             CustomerID: order.CustomerID,
-            UserID: order.UserID
+            UserID: order.UserID,
+            Address:order.Address
         });
        
     }

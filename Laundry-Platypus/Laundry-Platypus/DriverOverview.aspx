@@ -20,7 +20,9 @@
                 <tr>
                     <th>OrderID</th>
                     <th>CustomerName </th>
+                    <th>Address</th>
                     <th>Status</th>
+                    
                 </tr>
             </thead>
             <tbody>

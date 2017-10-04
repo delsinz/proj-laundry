@@ -23,6 +23,7 @@
                                 <tr>
                                     <th class="auto-style1">OrderID</th>
                                     <th class="auto-style1"> Customer </th>
+                                    <th>Address</th>
                                     <th class="auto-style1">Status</th>
                                 </tr>
                             </thead>
