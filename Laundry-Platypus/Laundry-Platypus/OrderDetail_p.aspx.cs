@@ -48,6 +48,13 @@ namespace Laundry_Platypus
                 DataList1.DataSource = dt;
                 DataList1.DataBind();
             }
+            if (IsPostBack != true)
+            {
+                MySqlDataReader reader2 = Datacon.getRow("SELECT note FROM tb_Order WHERE order_id = '" + orderid + "';");
+                reader2.Read();
+                TextBox2.Text = reader2["note"].ToString();
+            }
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -69,6 +76,7 @@ namespace Laundry_Platypus
                     order.Garment = garment;
                     if (System_L.Instance.SaveOrder(order))
                     {
+                        Datacon.execSQL("UPDATE tb_Order SET note = '" + TextBox2.Text + "' WHERE order_id = '" + orderid + "';");
                         Response.Redirect("driveroverview.aspx");
                     }
                     else

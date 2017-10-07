@@ -40,7 +40,8 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index.aspx">Complete Workwear</a
+				<a href="index.aspx">Complete Workwear</a>
+
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -51,7 +52,7 @@
 				</div>
 				<div class="navbar-btn navbar-btn-right">
                     <asp:Button ID="Button1" runat="server" Text="Log out" class="btn btn-primary"/>
-                    <asp:Label ID="UserName" runat="server" Visible="False" ></asp:Label>	 
+                    <asp:Label ID="UserName" runat="server" ></asp:Label>	 
 				</div>
 				
 			</div>
@@ -68,7 +69,10 @@
 
 
 					<ul class="nav">
-						<li><a href="index.aspx" class="active"><i class="lnr lnr-home"></i> <span>OrderOvervieww</span></a></li>
+						<li><a href="manager.aspx" class="active"><i class="lnr lnr-home"></i> <span>Order Overview</span></a></li>
+                        <li><asp:LinkButton ID="LinkButton1" runat="server" href="manageItem.aspx">Manage Item</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="LinkButton2" runat="server" href="ManageEmployee.aspx">Manage User</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="LinkButton3" runat="server" href="ViewForm.aspx">Monthly Total</asp:LinkButton></li>
 						<li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>More</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">

@@ -24,7 +24,7 @@
                         <tbody>
                             <tr>
                                 <td width="25%"><%#DataBinder.Eval(Container.DataItem, "type_name")%> </td>
-                                <asp:Label ID="Label1" runat="server" Visible="False"><%#DataBinder.Eval(Container.DataItem, "garment_id")%></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Visible="False" Text='<%#DataBinder.Eval(Container.DataItem, "garment_id")%>'></asp:Label>
                                 <td width="25%">
                                     <div>
                                         <div class="input-group">
@@ -48,7 +48,8 @@
 
 
                 <div class="form-group">
-                    <textarea class="form-control" rows="4" id="comment" placeholder="Write notes here..."></textarea>
+                    
+                    <asp:TextBox ID="TextBox2" class="form-control" rows="4"  Text="Write notes here..." runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-12">
                     <a href="driverOrderMain.html" class="btn btn-default">Back</a>

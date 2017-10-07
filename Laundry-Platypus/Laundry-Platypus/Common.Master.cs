@@ -13,7 +13,18 @@ namespace Laundry_Platypus
         {
             if (Session["user_name"] != null)
             { UserName.Text = Session["user_name"].ToString(); }
+            if (Session["role_id"].ToString() != "1")
+            {
+                LinkButton1.Visible = false;
+                LinkButton2.Visible = false;
+                LinkButton3.Visible = false;
 
+            }
+            else {
+                LinkButton1.Visible = true;
+                LinkButton2.Visible = true;
+                LinkButton3.Visible = true;
+            }
 
         }
 
