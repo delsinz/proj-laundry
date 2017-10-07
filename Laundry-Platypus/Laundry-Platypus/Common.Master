@@ -50,11 +50,10 @@
 					
 				</div>
 				<div class="navbar-btn navbar-btn-right">
-					</div>
-				<div id="navbar-menu">
-					    <asp:Button ID="Button1" runat="server" Text="Log out" class="nav navbar-nav navbar-right"/>
-                        <asp:Label ID="UserName" runat="server" class="nav navbar-nav navbar-right"></asp:Label>	    
+                    <asp:Button ID="Button1" runat="server" Text="Log out" class="btn btn-primary"/>
+                    <asp:Label ID="UserName" runat="server" ></asp:Label>	 
 				</div>
+				
 			</div>
 		</nav>
 		<!-- END NAVBAR -->
