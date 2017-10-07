@@ -8,11 +8,20 @@ namespace Laundry_Platypus
 {
     public class Order
     {
+        public string state;
         public string ID { get; set; }
         public string Date { get; set; }
         public string CustomerID { get; set; }
         public string CustomerName { get; set; }
-        public string State { get; set; }
+        public string State {
+            get { return state; }
+            set {
+                MySqlDataReader reader = Datacon.getRow("SELECT * FROM tb_Order_state WHERE state_id ='" + value + "';");
+                reader.Read();
+                StateName = reader["state_name"].ToString(); ;
+                state = value;
+            }
+        }
         public string StateName { get; set; }
         public string Comment { get; set; }
         public string Product { get; set; }
@@ -32,6 +41,23 @@ namespace Laundry_Platypus
             MySqlDataReader reader= Datacon.getRow("SELECT address FROM tb_User WHERE user_id ='"+ customerID+ "';");
             reader.Read();
             Address=reader["address"].ToString();
+        }
+        public Order(string id, string state, string date, string customerID, string userID, string garment)
+        {
+            ID = id;
+            State = state;
+            Date = date;
+            CustomerID = customerID;
+            UserID = userID;
+            MySqlDataReader reader = Datacon.getRow("SELECT * FROM tb_User WHERE user_id ='" + customerID + "';");
+            reader.Read();
+            CustomerName = reader["first_name"].ToString();
+           
+            Garment = garment;
+            Address = reader["address"].ToString();
+            reader = Datacon.getRow("SELECT * FROM tb_Order_state WHERE state_id ='" + State + "';");
+            reader.Read();
+            StateName = reader["state_name"].ToString(); ;
         }
     }
 }

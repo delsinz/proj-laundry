@@ -246,5 +246,33 @@ namespace Laundry_Platypus
             return false;
 
         }
+
+        public bool AddOrder(Order order)
+        {
+            order.State = "1";
+            if (order.State == "1")
+            {
+                //driver should pickup
+                int n = 0;
+                for (int t = 0; t < drivers.Count; t++)// get the driver who have less works
+                {
+                    if (drivers[t].OrderNumber < drivers[n].OrderNumber)
+                    {
+                        n = t;
+                    }
+                }
+                if (drivers[n].addOrder_p(order) > 0)
+                {
+                    Order order_t = order;
+                    order_t.UserID = drivers[n].ID;
+                    _orders.TryAdd(order_t.ID, order_t);
+                    //System_L.Instance.UpdateOrder(order);
+                    if(Save(order_t))
+                    { return true; }
+                    
+                }
+            }
+            return false;
+        }
     }
 }

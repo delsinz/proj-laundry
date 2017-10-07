@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-md-12">
                     <a href="driverOrderMain.html" class="btn btn-default">Back</a>
-                   <asp:Button ID="return" runat="server" Text="Return" onClick ="return_click"/>
+                    <asp:Label ID="Label1" runat="server" Text="Total Price:"></asp:Label>
                     <asp:TextBox ID="price" runat="server"></asp:TextBox>
                    <asp:Button ID="save" runat="server" Text="Save Order" onClick ="save_click"/>
                 </div>

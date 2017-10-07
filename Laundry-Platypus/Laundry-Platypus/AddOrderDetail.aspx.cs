@@ -87,6 +87,8 @@ namespace Laundry_Platypus
             if (Datacon.execSQL("INSERT INTO tb_Order (order_id,order_date,customer_id,user_id,order_state,garment,total_price) VALUES ('"
               + time_id + "','" + order_date + "','" + customer_id + "','0','9','" + garment + "','" + price_t + "');"))
             {
+                Order order = new Order(time_id,"0", order_date, customer_id,"0",garment);
+                System_L.Instance.AddOrder(order);
                 Response.Redirect("manager.aspx");
             }
 

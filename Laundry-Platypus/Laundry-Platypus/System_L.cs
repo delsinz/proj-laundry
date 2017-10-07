@@ -137,13 +137,16 @@ namespace Laundry_Platypus
         {
             try
             {
-                _orders.TryAdd(order.ID, order);
-                return true;
+                if (controler.AddOrder(order))
+                {
+                    return true;
+                }
             }
             catch
             {
                 return false;
             }
+            return false;
         }
         public Order GetOrder(string order_id)
         {
