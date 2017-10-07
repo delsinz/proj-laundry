@@ -98,6 +98,7 @@ namespace Laundry_Platypus
                 if (order.State == "5")
                 {
                     //finished
+                    System_L.Instance.UpdateOrder(order);
                 }
                 else if (order.State == "0")
                 {
@@ -119,6 +120,7 @@ namespace Laundry_Platypus
                         Order order_t = order;
                         order_t.UserID = drivers[n].ID;
                         _orders.TryUpdate(order.ID,order_t,order);
+                        System_L.Instance.UpdateOrder(order);
                         return true;
                     }
                 }
@@ -138,6 +140,7 @@ namespace Laundry_Platypus
                         Order order_t = order;
                         order_t.UserID = drivers[n].ID;
                         _orders.TryUpdate(order.ID, order_t, order);
+                        System_L.Instance.UpdateOrder(order);
                         return true;
                     }
                 }
@@ -155,7 +158,8 @@ namespace Laundry_Platypus
                     if (packers[n].addOrder_p(order) > 0) {
                         Order order_t = order;
                         order_t.UserID = packers[n].ID;
-                        _orders.TryUpdate(order.ID, order_t, order); return true; }
+                        _orders.TryUpdate(order.ID, order_t, order);
+                        System_L.Instance.UpdateOrder(order); return true; }
                 }
                 else if (order.State == "3")
                 {
@@ -172,6 +176,7 @@ namespace Laundry_Platypus
                         Order order_t = order;
                         order_t.UserID = packers[n].ID;
                         _orders.TryUpdate(order.ID, order_t, order);
+                        System_L.Instance.UpdateOrder(order);
                         return true; }
                 }
             }
@@ -201,6 +206,45 @@ namespace Laundry_Platypus
                 }
             }
             return orders_t;
+        }
+        public bool Save(Order order)
+        {
+            if(Datacon.execSQL("UPDATE tb_Order SET user_id ='"+order.UserID+"', order_state = '"+order.State+"', garment = '"+order.Garment+"' WHERE order_id ='"+order.ID+"';"))
+             {
+                this.drivers.ForEach((x) =>
+                {
+                    if (x.getOrder_d(order.ID) != null)
+                    {
+                        order = x.getOrder_d(order.ID);
+                        x.rmOrder_d(order.ID);
+                        x.addOrder_d(order);
+                    }
+                    else if (x.getOrder_p(order.ID) != null)
+                    {
+                        order = x.getOrder_p(order.ID);
+                        x.rmOrder_p(order.ID);
+                        x.addOrder_p(order);
+                    }
+                });
+                this.packers.ForEach((x) =>
+                {
+                    if (x.getOrder_d(order.ID) != null)
+                    {
+                        order = x.getOrder_d(order.ID);
+                        x.rmOrder_d(order.ID);
+                        x.addOrder_d(order);
+                    }
+                    else if (x.getOrder_p(order.ID) != null)
+                    {
+                        order = x.getOrder_p(order.ID);
+                        x.rmOrder_p(order.ID);
+                        x.addOrder_p(order);
+                    }
+                });
+                return true;
+            }
+            return false;
+
         }
     }
 }

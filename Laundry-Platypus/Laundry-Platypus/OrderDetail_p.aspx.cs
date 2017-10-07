@@ -12,6 +12,7 @@ namespace Laundry_Platypus
     public partial class OrderDetail : System.Web.UI.Page
     {
         string orderid=null;
+        Order order = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -20,7 +21,7 @@ namespace Laundry_Platypus
             dt.Columns.Add("abbreviation", Type.GetType("System.String"));
             dt.Columns.Add("activate", Type.GetType("System.String"));
             dt.Columns.Add("amount", Type.GetType("System.String"));
-            Order order=null;
+            
             string garment;
              orderid = Request["orderid"].ToString();
             Session["order_id"] = orderid;
@@ -51,12 +52,30 @@ namespace Laundry_Platypus
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string garment=null;
             orderid = Session["order_id"].ToString();
             if (orderid != null)
             {
                 if (System_L.Instance.Distribute(orderid))
                 {
-                    Response.Redirect("driveroverview.aspx");
+                    foreach (DataListItem item in DataList1.Items)
+                    {
+                        Label label1 = item.FindControl("Label1") as Label;
+                        string garment_id = label1.Text;
+                        TextBox textb = item.FindControl("TextBox1") as TextBox;
+                        string garment_amount = textb.Text;
+                        garment = garment + garment_id + "," + garment_amount + ";";
+                    }
+                    order.Garment = garment;
+                    if (System_L.Instance.SaveOrder(order))
+                    {
+                        Response.Redirect("driveroverview.aspx");
+                    }
+                    else
+                    {
+                        Response.Write("< script lanuage = javascript > alert('failed'); window.location.href = 'driveroverview.aspx' </ script >");
+
+                    }
                 }
                 else {
                     Response.Write("< script lanuage = javascript > alert('failed'); window.location.href = 'driveroverview.aspx' </ script >");

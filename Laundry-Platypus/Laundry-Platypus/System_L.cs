@@ -77,7 +77,7 @@ namespace Laundry_Platypus
             }
             return null;
         }
-        private void UpdateOrder(Order order)
+        public void UpdateOrder(Order order)
         {
             lock (_updateOrderLock)
             {
@@ -85,15 +85,7 @@ namespace Laundry_Platypus
                 {
                     _updatingOrder = true;
 
-                    foreach (var order_t in _orders.Values)
-                    {
-
-                        if (order_t.ID.Equals(order.ID))
-                        {
-                            //_orders.TryUpdate;
-                            //Clients
-                        }
-                    }
+                    Clients.All.addOrder(order);
 
                     _updatingOrder = false;
                 }
@@ -158,7 +150,7 @@ namespace Laundry_Platypus
             Order order=null;
             controler.drivers.ForEach((x) =>
             {
-                //Console.WriteLine(string.Format("姓名：{0}，年龄：{1}", x.Name, x.Age));
+                
                 if (x.getOrder_d(order_id) != null)
                 {
                     order = x.getOrder_d(order_id);
@@ -171,7 +163,7 @@ namespace Laundry_Platypus
             });
             controler.packers.ForEach((x) =>
             {
-                //Console.WriteLine(string.Format("姓名：{0}，年龄：{1}", x.Name, x.Age));
+                
                 if (x.getOrder_d(order_id) != null)
                 {
                     order = x.getOrder_d(order_id);
@@ -191,6 +183,12 @@ namespace Laundry_Platypus
             {
                 return true;
             }
+            return false;
+        }
+        public bool SaveOrder(Order order)
+        {
+            if (controler.Save(order))
+            { return true; }
             return false;
         }
     }

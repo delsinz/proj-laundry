@@ -24,6 +24,7 @@
                         <tbody>
                             <tr>
                                 <td width="25%"><%#DataBinder.Eval(Container.DataItem, "type_name")%> </td>
+                                <asp:Label ID="Label1" runat="server" Visible="False"><%#DataBinder.Eval(Container.DataItem, "garment_id")%></asp:Label>
                                 <td width="25%">
                                     <div>
                                         <div class="input-group">
