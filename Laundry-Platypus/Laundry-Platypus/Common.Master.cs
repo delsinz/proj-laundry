@@ -33,5 +33,11 @@ namespace Laundry_Platypus
             Session.Clear();
             Response.Redirect("login.aspx");
         }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("login.aspx");
+        }
     }
 }

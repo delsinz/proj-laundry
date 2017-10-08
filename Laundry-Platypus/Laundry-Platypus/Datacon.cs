@@ -11,7 +11,7 @@ namespace Laundry_Platypus
     {
         static MySqlConnection con;
         //public static string Conn_string = "Database='laundry';Data Source='35.190.155.225:3306';User Id='testuser';Password='laundry123456';charset='utf8';pooling=true";
-        static string connStr = "Server=35.190.155.225;Database=laundry;Uid=testuser;Pwd=laundry123456;CharSet=utf8;";
+        static string connStr = "Server=127.0.0.1;Database=laundry;Uid=testuser;Pwd=laundry123456;CharSet=utf8;";
         //static MySqlConnection con;
         public static bool execSQL(string sql)
         {
