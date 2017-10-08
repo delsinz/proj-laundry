@@ -70,7 +70,8 @@
 
 
 					<ul class="nav">
-						<li><a href="manager.aspx" class="active"><i class="lnr lnr-home"></i> <span>Order Overview</span></a></li>
+						<!--<li><a href="manager.aspx" class="active"><i class="lnr lnr-home"></i> <span>Order Overview</span></a></li>-->
+                        <li><asp:HyperLink ID="HyperLink1" runat="server" class="active"><i class="lnr lnr-home"></i> <span>Order Overview</span></asp:HyperLink></li>
                         <li><asp:LinkButton ID="LinkButton1" runat="server" href="manageItem.aspx">Manage Item</asp:LinkButton></li>
                         <li><asp:LinkButton ID="LinkButton2" runat="server" href="ManageEmployee.aspx">Manage User</asp:LinkButton></li>
                         <li><asp:LinkButton ID="LinkButton3" runat="server" href="ViewForm.aspx">Monthly Total</asp:LinkButton></li>

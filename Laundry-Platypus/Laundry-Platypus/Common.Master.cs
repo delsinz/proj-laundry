@@ -18,13 +18,18 @@ namespace Laundry_Platypus
                 LinkButton1.Visible = false;
                 LinkButton2.Visible = false;
                 LinkButton3.Visible = false;
-
-            }
+                
+                    if (Session["role_id"].ToString() != "3")
+                    { HyperLink1.NavigateUrl = "packeroverview.aspx"; }
+                    if (Session["role_id"].ToString() != "2")
+                    { HyperLink1.NavigateUrl = "driveroverview.aspx"; }
+                }
             else {
                 LinkButton1.Visible = true;
                 LinkButton2.Visible = true;
                 LinkButton3.Visible = true;
-            }
+                    HyperLink1.NavigateUrl = "manager.aspx";
+                }
 
         }
 

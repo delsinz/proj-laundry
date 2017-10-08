@@ -187,13 +187,22 @@ namespace Laundry_Platypus
         public IEnumerable<Order> GetOrderList(Person person)
         {
             IEnumerable<Order> orders_t=null;
+            IEnumerable<Order> orders_t2 = null;
             foreach (Driver driver in drivers)
             {
                 if (driver.ID == person.ID)
                 {
                     List<Order> orders_tL = driver.pickup_list;
                     orders_tL.AddRange(driver.dropoff_list);
-                   orders_t = orders_tL;
+                    List<Order> orders_tL2 = driver.pickup_list;
+                    orders_tL2.AddRange(driver.dropoff_list);
+                    foreach (Order order_ttt in orders_tL)
+                    {
+
+                        if(order_ttt.State=="5")
+                        { orders_tL2.Remove(order_ttt); }
+                    }
+                   orders_t = orders_tL2;
                     
                 }
             }
@@ -203,7 +212,15 @@ namespace Laundry_Platypus
                 {
                     List<Order> orders_tL = packer.pickup_list;
                     orders_tL.AddRange(packer.dropoff_list);
-                    orders_t = orders_tL;
+                    List<Order> orders_tL2 = packer.pickup_list;
+                    orders_tL2.AddRange(packer.dropoff_list);
+                    foreach (Order order_ttt in orders_tL)
+                    {
+                        if (order_ttt.State == "5")
+                        { orders_tL2.Remove(order_ttt); }
+                    }
+                    orders_t = orders_tL2;
+
                 }
             }
             return orders_t;
