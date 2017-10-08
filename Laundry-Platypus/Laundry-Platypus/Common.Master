@@ -40,7 +40,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index.aspx">Complete Workwear</a
+				<a href="index.aspx">Complete Workwear</a>
 
 			</div>
 			<div class="container-fluid">
@@ -51,8 +51,9 @@
 					
 				</div>
 				<div class="navbar-btn navbar-btn-right">
-                    <asp:Button ID="Button1" runat="server" Text="Log out" class="btn btn-primary" OnClick="Button1_Click1"/>
-                    <asp:Label ID="UserName" runat="server" ></asp:Label>	 
+                    <asp:Button ID="Button1" runat="server" Text="Log out" class="btn btn-primary"/>
+                    <!--<asp:Label ID="UserName" runat="server" ></asp:Label> -->
+                    	 
 				</div>
 				
 			</div>
@@ -69,7 +70,7 @@
 
 
 					<ul class="nav">
-						<li><a href="manager.aspx" class="active"><i class="lnr lnr-home"></i> <span>Order Overvieww</span></a></li>
+						<li><a href="manager.aspx" class="active"><i class="lnr lnr-home"></i> <span>Order Overview</span></a></li>
                         <li><asp:LinkButton ID="LinkButton1" runat="server" href="manageItem.aspx">Manage Item</asp:LinkButton></li>
                         <li><asp:LinkButton ID="LinkButton2" runat="server" href="ManageEmployee.aspx">Manage User</asp:LinkButton></li>
                         <li><asp:LinkButton ID="LinkButton3" runat="server" href="ViewForm.aspx">Monthly Total</asp:LinkButton></li>
