@@ -12,7 +12,7 @@ namespace Laundry_Platypus
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["user_name"] != null)
-            { UserName.Text = Session["user_name"].ToString(); }
+            //{ UserName.Text = Session["user_name"].ToString(); }
             if (Session["role_id"].ToString() != "1")
             {
                 LinkButton1.Visible = false;

@@ -1,5 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Common.Master" AutoEventWireup="true" CodeBehind="AddOrderDetail.aspx.cs" Inherits="Laundry_Platypus.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Add order details</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/itemStyle.css" rel="stylesheet">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div class="container">
@@ -12,8 +24,7 @@
                                 <tr>
                                     <th>Type </th>
                                     <th>Quantity </th>
-                                    <th>Type </th>
-                                    <th>Quantity </th>
+  
                                 </tr>
                             </thead>
                     </HeaderTemplate>

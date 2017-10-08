@@ -48,5 +48,5 @@
                
         </div>
     </div>
-    <asp:Button ID="Button1" runat="server" Text="Add Order" onClick ="Button1_Click"/>
+    <asp:Button ID="Button1" runat="server" Text="Add Order" onClick ="Button1_Click" class="btn btn-default"/>
 </asp:Content>
