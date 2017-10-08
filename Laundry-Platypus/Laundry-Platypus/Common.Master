@@ -74,15 +74,7 @@
                         <li><asp:LinkButton ID="LinkButton1" runat="server" href="manageItem.aspx">Manage Item</asp:LinkButton></li>
                         <li><asp:LinkButton ID="LinkButton2" runat="server" href="ManageEmployee.aspx">Manage User</asp:LinkButton></li>
                         <li><asp:LinkButton ID="LinkButton3" runat="server" href="ViewForm.aspx">Monthly Total</asp:LinkButton></li>
-						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>More</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-							<div id="subPages" class="collapse ">
-								<ul class="nav">
-									<li><a href="Suggestion.aspx" class="">Suggestion</a></li>
-									<li><a href="Donate.aspx" class="">Donate</a></li>
-								</ul>
-							</div>
-						</li>
+						
 					</ul>
 				</nav>
 			</div>

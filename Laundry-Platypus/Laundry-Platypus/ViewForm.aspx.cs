@@ -21,7 +21,7 @@ namespace Laundry_Platypus
                 DataSet ds = Datacon.getDataset("SELECT * FROM tb_User WHERE role_id = 4;", "Customers");
 
                 CustomerDropList.DataSource = ds.Tables["Customers"].DefaultView;
-                CustomerDropList.DataTextField = "first_name";
+                CustomerDropList.DataTextField = "user_name";
                 CustomerDropList.DataValueField = "user_id";
                 CustomerDropList.DataBind();
                 Button2.Visible = false;
@@ -84,7 +84,7 @@ namespace Laundry_Platypus
             sw.WriteLine("OrderID,Customer,Amount");
             foreach (DataRow dr in dt.Rows)
             {
-                sw.WriteLine(dr["order_id"] + "," + dr["first_name"] + "," + dr["total_price"]);
+                sw.WriteLine(dr["order_id"] + "," + dr["user_name"] + "," + dr["total_price"]);
             }
             sw.Close();
             Response.AddHeader("Content-Disposition", "attachment; filename=Form.csv");

@@ -24,7 +24,8 @@
                                 <tr>
                                     <th>Type </th>
                                     <th>Quantity </th>
-  
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                     </HeaderTemplate>
@@ -35,18 +36,10 @@
                                 <td width="25%">
                                     <div>
                                         <div class="input-group">
-                                            <span class="input-group-btn">
-                                                <button type="button" class="quantity-left-minus1 btn btn-danger btn-number" data-type="minus" data-field="">
-                                                    <span class="glyphicon glyphicon-minus"></span>
-                                                </button>
-                                            </span>
+                                             
                                             
                                             <asp:TextBox ID="TextBox1"  type="text" runat="server" class="form-control input-number" min="0" max="100" name="quantity" Text='<%#DataBinder.Eval(Container.DataItem, "garment_number")%>'></asp:TextBox>
-                                            <span class="input-group-btn">
-                                                <button type="button" class="quantity-right-plus1 btn btn-success btn-number" data-type="plus" data-field="">
-                                                    <span class="glyphicon glyphicon-plus"></span>
-                                                </button>
-                                            </span>
+                                             
                                         </div>
                                     </div>
                                 </td>
@@ -59,13 +52,13 @@
 
 
                 <div class="form-group">
-                    <textarea class="form-control" rows="4" id="comment" placeholder="Write notes here..."></textarea>
+                    <asp:TextBox ID="TextBox3" class="form-control" rows="4"  Text="Write notes here..." runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-12">
                     <a href="driverOrderMain.html" class="btn btn-default">Back</a>
                     <asp:Label ID="Label1" runat="server" Text="Total Price:"></asp:Label>
                     <asp:TextBox ID="price" runat="server"></asp:TextBox>
-                   <asp:Button ID="save" runat="server" Text="Save Order" onClick ="save_click"/>
+                   <asp:Button ID="save" runat="server" Text="Save Order" onClick ="save_click" class="btn btn-default"/>
                 </div>
             </div>
         </div>

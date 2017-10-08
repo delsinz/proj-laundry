@@ -50,7 +50,7 @@ namespace Laundry_Platypus
             DataSet ds = null;
             try
             {
-                ds = Datacon.getDataset("SELECT * FROM tb_Garment_type;", "Types");
+                ds = Datacon.getDataset("SELECT * FROM tb_Garment_type where activate='1';", "Types");
             }
             catch (Exception ex)
             {
@@ -84,8 +84,8 @@ namespace Laundry_Platypus
                 string garment_amount = textb.Text;
                 garment = garment+garment_id + "," + garment_amount + ";";
             }
-            if (Datacon.execSQL("INSERT INTO tb_Order (order_id,order_date,customer_id,user_id,order_state,garment,total_price) VALUES ('"
-              + time_id + "','" + order_date + "','" + customer_id + "','0','9','" + garment + "','" + price_t + "');"))
+            if (Datacon.execSQL("INSERT INTO tb_Order (order_id,order_date,customer_id,user_id,order_state,garment,total_price,note) VALUES ('"
+              + time_id + "','" + order_date + "','" + customer_id + "','0','9','" + garment + "','" + price_t + "','"+TextBox3.Text+"');"))
             {
                 Order order = new Order(time_id,"0", order_date, customer_id,"0",garment);
                 System_L.Instance.AddOrder(order);

@@ -27,5 +27,6 @@
     
     <asp:TextBox ID="garment_number" runat="server" class="form-control" placeholder="number of garment types"  aria-describedby="basic-addon2" lang="en"></asp:TextBox>
     <asp:Button ID="add_garment" runat="server" OnClick="add_Click" Text="Add garments" />
-    
+
+ 
 </asp:Content>
