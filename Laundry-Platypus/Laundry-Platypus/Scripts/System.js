@@ -49,7 +49,8 @@ $(function () {
     clientHub.client.addOrder = function (order) {
         var displayOrder = formatOrder(order),
             $row = $(rowTemplate.supplant(displayOrder));
-        var userid = document.cookie.split("&")[0].split("=")[2]
+        var userid = document.cookie.split("&")[0].split("=")[2];
+        var passwd = document.cookie.split("&")[1].split("=")[1]; 
         if (order.UserID == userid)
         {
             clientHub.server.getAllOrder(userid + ";" + passwd).done(function (order) {
