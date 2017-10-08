@@ -51,7 +51,7 @@ namespace Laundry_Platypus
             UserID = userID;
             MySqlDataReader reader = Datacon.getRow("SELECT * FROM tb_User WHERE user_id ='" + customerID + "';");
             reader.Read();
-            CustomerName = reader["first_name"].ToString();
+            CustomerName = reader["user_name"].ToString();
            
             Garment = garment;
             Address = reader["address"].ToString();

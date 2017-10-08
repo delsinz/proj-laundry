@@ -126,7 +126,7 @@ namespace Laundry_Platypus
         {
             OrderNumber = OrderNumber + 1;
             dropoff_list.Add(order);
-            return pickup_list.Count;
+            return dropoff_list.Count;
         }
         public bool setOrder(Order order)
         {

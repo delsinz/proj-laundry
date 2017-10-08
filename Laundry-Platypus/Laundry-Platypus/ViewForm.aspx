@@ -68,7 +68,7 @@
        
            <tr>
              <td><asp:Label runat="server" ID="lblID" Text='<%# Eval("order_id") %>'></asp:Label></td>
-             <td><asp:Label runat="server" ID="lblTitle" Text='<%# Eval("first_name") %>'></asp:Label></td>
+             <td><asp:Label runat="server" ID="lblTitle" Text='<%# Eval("user_name") %>'></asp:Label></td>
              <td><asp:Label runat="server" ID="lblText" Text='<%# Eval("total_price") %>'></asp:Label></td>
            </tr>
         
@@ -77,7 +77,7 @@
        
            <tr>
               <td><asp:Label runat="server" ID="lblID" Text='<%# Eval("order_id") %>'></asp:Label></td>
-              <td><asp:Label runat="server" ID="lblTitle" Text='<%# Eval("first_name") %>'></asp:Label></td>
+              <td><asp:Label runat="server" ID="lblTitle" Text='<%# Eval("user_name") %>'></asp:Label></td>
               <td><asp:Label runat="server" ID="lblText" Text='<%# Eval("total_price") %>'></asp:Label></td>
             </tr>
           

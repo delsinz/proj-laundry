@@ -37,13 +37,13 @@ namespace Laundry_Platypus
                    
                     if (CheckBox1.Checked != true)
                     {//all show
-                         ds1 = Datacon.getDataset("SELECT order_date,order_id,tb_User.first_name,total_price FROM tb_Order INNER JOIN tb_User WHERE tb_User.user_id = tb_Order.customer_id  AND order_date BETWEEN '" + datebegin.Text + "' AND '" + dateend.Text + "' ORDER BY order_date; ", "Total");
+                         ds1 = Datacon.getDataset("SELECT order_date,order_id,tb_User.user_name,total_price FROM tb_Order INNER JOIN tb_User WHERE tb_User.user_id = tb_Order.customer_id  AND order_date BETWEEN '" + datebegin.Text + "' AND '" + dateend.Text + "' ORDER BY order_date; ", "Total");
                         rpTest.DataSource = ds1;
                         rpTest.DataBind();
                     }
                     else
                     {
-                        ds1 = Datacon.getDataset("SELECT order_date,order_id,tb_User.first_name,total_price FROM tb_Order INNER JOIN tb_User WHERE tb_User.user_id = tb_Order.customer_id AND tb_Order.customer_id=" + CustomerDropList.SelectedValue + " AND order_date BETWEEN '" + datebegin.Text + "' AND '" + dateend.Text + "' ORDER BY order_date; ", "Total");
+                        ds1 = Datacon.getDataset("SELECT order_date,order_id,tb_User.user_name,total_price FROM tb_Order INNER JOIN tb_User WHERE tb_User.user_id = tb_Order.customer_id AND tb_Order.customer_id=" + CustomerDropList.SelectedValue + " AND order_date BETWEEN '" + datebegin.Text + "' AND '" + dateend.Text + "' ORDER BY order_date; ", "Total");
                         rpTest.DataSource = ds1;
                         rpTest.DataBind();
                     }
@@ -102,7 +102,7 @@ namespace Laundry_Platypus
             sw.WriteLine("OrderID,Customer,Amount");
             foreach (DataRow dr in dt.Rows)
             {
-                sw.WriteLine(dr["order_id"] + "," + dr["first_name"] + "," + dr["total_price"]);
+                sw.WriteLine(dr["order_id"] + "," + dr["user_name"] + "," + dr["total_price"]);
             }
             sw.Close();
             Response.AddHeader("Content-Disposition", "attachment; filename=Form.csv");

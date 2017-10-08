@@ -99,6 +99,7 @@ namespace Laundry_Platypus
                 {
                     //finished
                     System_L.Instance.UpdateOrder(order);
+                    return true;
                 }
                 else if (order.State == "0")
                 {
@@ -135,7 +136,7 @@ namespace Laundry_Platypus
                             n = t;
                         }
                     }
-                    if (drivers[n].addOrder_d(order) > 0)
+                    if (drivers[n].addOrder_d(order) >= 0)
                     {
                         Order order_t = order;
                         order_t.UserID = drivers[n].ID;

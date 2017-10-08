@@ -77,7 +77,23 @@ namespace Laundry_Platypus
                     if (System_L.Instance.SaveOrder(order))
                     {
                         Datacon.execSQL("UPDATE tb_Order SET note = '" + TextBox2.Text + "' WHERE order_id = '" + orderid + "';");
-                        Response.Redirect("driveroverview.aspx");
+                        if (Session["role_id"].ToString() == "1")
+                        {
+                            Response.Redirect("Manager.aspx");
+                        }
+                        if (Session["role_id"].ToString() == "2")
+                        {
+                            Response.Redirect("PackerOverview.aspx");
+                        }
+                        if (Session["role_id"].ToString() == "3")
+                        {
+                            Response.Redirect("DriverOverview.aspx");
+                        }
+                        if (Session["role_id"].ToString() == "4")
+                        {
+                            Response.Redirect("login.aspx");
+                        }
+
                     }
                     else
                     {
@@ -88,6 +104,26 @@ namespace Laundry_Platypus
                 else {
                     Response.Write("< script lanuage = javascript > alert('failed'); window.location.href = 'driveroverview.aspx' </ script >");
                 }
+            }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            if (Session["role_id"].ToString() == "1")
+            {
+                Response.Redirect("Manager.aspx");
+            }
+            if (Session["role_id"].ToString() == "2")
+            {
+                Response.Redirect("PackerOverview.aspx");
+            }
+            if (Session["role_id"].ToString() == "3")
+            {
+                Response.Redirect("DriverOverview.aspx");
+            }
+            if (Session["role_id"].ToString() == "4")
+            {
+                Response.Redirect("login.aspx");
             }
         }
     }

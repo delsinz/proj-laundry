@@ -70,7 +70,7 @@ namespace Laundry_Platypus
 
             try
             {
-                DataSet ds = Datacon.getDataset("SELECT * FROM `tb_Garment_type`;", "Types");
+                DataSet ds = Datacon.getDataset("SELECT * FROM `tb_Garment_type` where activate='1';", "Types");
 
                 Console.WriteLine("reading data");
                 //garment_type.DataSource = ds.Tables["Types"];
@@ -92,7 +92,7 @@ namespace Laundry_Platypus
                 DataSet ds = Datacon.getDataset("SELECT * FROM tb_User WHERE role_id = 4;", "Customers");
 
                 CustomerDropList.DataSource = ds.Tables["Customers"].DefaultView;
-                CustomerDropList.DataTextField = "first_name";
+                CustomerDropList.DataTextField = "user_name";
                 CustomerDropList.DataValueField = "user_id";
                 CustomerDropList.DataBind();
             }
