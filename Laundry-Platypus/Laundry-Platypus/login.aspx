@@ -21,8 +21,8 @@
                     <h1>Login</h1>
                 </div>
                 <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">UserID</span>
-                    <asp:TextBox ID="userid" runat="server" class="form-control" placeholder="userid" aria-describedby="basic-addon1"></asp:TextBox>
+                    <span class="input-group-addon" id="basic-addon1">User Name</span>
+                    <asp:TextBox ID="username" runat="server" class="form-control" placeholder="userid" aria-describedby="basic-addon1"></asp:TextBox>
 
                 </div>
                 <div class="input-group">

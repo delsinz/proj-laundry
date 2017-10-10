@@ -18,14 +18,14 @@ namespace Laundry_Platypus
             }
             return false;
         }
-        public static MySqlDataReader GetUser(string userid)
+        public static MySqlDataReader GetUser(string username)
         {
-            MySqlDataReader datard = Datacon.getRow("SELECT * FROM tb_User WHERE user_id='" + userid + "';");
+            MySqlDataReader datard = Datacon.getRow("SELECT * FROM tb_User WHERE user_name='" + username + "';");
             return datard;
         }
-        public static int Login(string userid, string password)
+        public static int Login(string username, string password)
         {
-            int authority = Datacon.seleSQL("SELECT role_id FROM tb_User WHERE user_id='" + userid + "'and password='" + password + "';");
+            int authority = Datacon.seleSQL("SELECT role_id FROM tb_User WHERE user_name='" + username + "'and password='" + password + "';");
             return authority;
         }
     }
