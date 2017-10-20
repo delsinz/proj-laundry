@@ -1,0 +1,47 @@
+CREATE TABLE `tb_garment_type` (
+  `garment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_name` varchar(255) NOT NULL,
+  `abbreviation` varchar(50) DEFAULT NULL,
+  `activate` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`garment_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+CREATE TABLE `tb_order` (
+  `order_id` varchar(50) NOT NULL,
+  `order_date` date NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `order_state` int(11) NOT NULL,
+  `garment` varchar(100) NOT NULL,
+  `total_price` varchar(500) NOT NULL,
+  `note` text,
+  PRIMARY KEY (`order_id`),
+  KEY `tb_Order_ibfk_2` (`customer_id`),
+  KEY `tb_Order_ibfk_3` (`order_state`),
+  CONSTRAINT `tb_Order_ibfk_2` FOREIGN KEY (`customer_id`) REFERENCES `tb_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `tb_Order_ibfk_3` FOREIGN KEY (`order_state`) REFERENCES `tb_order_state` (`state_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `tb_order_state` (
+  `state_id` int(11) NOT NULL,
+  `state_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`state_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `tb_role` (
+  `role_id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;CREATE TABLE `tb_user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `role_id` int(11) NOT NULL,
+  `user_contact` varchar(100) DEFAULT NULL,
+  `user_active` varchar(100) DEFAULT NULL,
+  `user_selfie` varchar(100) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`user_id`),
+  KEY `role_id` (`role_id`),
+  CONSTRAINT `tb_User_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `tb_role` (`role_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+
