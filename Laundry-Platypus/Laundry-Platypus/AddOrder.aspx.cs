@@ -22,7 +22,10 @@ namespace Laundry_Platypus
             LoadCustomers();
             LoadDrivers();
         }
-
+        /**
+         * This function is to save the input from clients and store them in session, then redirect to 
+         * further detailed page
+         * */
         protected void Button1_Click(object sender, EventArgs e)
         {
             //Order order_t=new Order(,,,,);
@@ -48,7 +51,10 @@ namespace Laundry_Platypus
            //}
 
         }
-
+        /**
+         * This function is to save the input from clients and store them in session, then redirect to 
+         * further detailed page
+         * */
         protected void add_Click(object sender, EventArgs e)
         {
             //TableCell cel1 = new TableCell();
@@ -64,7 +70,9 @@ namespace Laundry_Platypus
             Session["customer_id"] = CustomerDropList.SelectedValue;
             Response.Write("<script lanuage=javascript>window.location.href='AddorderDetail.aspx'</script>");
         }
-
+        /**
+         *  This function is to queary database about the garment types, and load them into dropdown list
+         * */
         private void LoadGarmentTypes()
         {
 
@@ -83,7 +91,9 @@ namespace Laundry_Platypus
                 Console.WriteLine("not reading");
             }
         }
-
+        /**
+        * This function is to queary database about the customer, and load them into dropdown list
+        * */
         private void LoadCustomers()
         {
 
@@ -102,7 +112,9 @@ namespace Laundry_Platypus
             }
 
         }
-
+        /**
+        * This function is to queary database about the driver, and load them into dropdown list
+        * */
         private void LoadDrivers()
         {
 

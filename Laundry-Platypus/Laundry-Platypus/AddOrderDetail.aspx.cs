@@ -44,7 +44,9 @@ namespace Laundry_Platypus
                 }
             }
         }
-
+        /**
+        * This function is to queary database about the garmenttypes, and load them into dropdown list
+        * */
         private DataSet LoadGarmentTypes()
         {
             DataSet ds = null;
@@ -58,13 +60,17 @@ namespace Laundry_Platypus
             }
             return ds;
         }
-
+        /**
+        * This function is to return the previous page
+        * */
         protected void return_click(object sender, EventArgs e)
         {
             Response.Redirect("AddOrder.aspx");
 
         }
-
+        /**
+        * This function is to save the order details into database and real-time system
+        * */
         protected void save_click(object sender, EventArgs e)
         {
             //read data from session

@@ -12,6 +12,9 @@ namespace Laundry_Platypus
         public readonly ConcurrentDictionary<string, Order> _orders = new ConcurrentDictionary<string, Order>();
         public List<Driver> drivers = new List<Driver>();
         public List<Packer> packers = new List<Packer>();
+        /**
+        * This function is to initial the object
+        * */
         public Controler(ConcurrentDictionary<string, Person> users, ConcurrentDictionary<string, Order> orders)
         {
             _users = users;
@@ -62,6 +65,9 @@ namespace Laundry_Platypus
                 }
             }
         }
+        /**
+        * This function is to distribute the order 
+        * */
         public bool Distruibute(string order_id)
         {
             Order order = null;
@@ -184,6 +190,9 @@ namespace Laundry_Platypus
             return false;
             
         }
+        /**
+        * This function is to get the all of orders from system according to specific account
+        * */
         public IEnumerable<Order> GetOrderList(Person person)
         {
             IEnumerable<Order> orders_t=null;
@@ -237,6 +246,9 @@ namespace Laundry_Platypus
             }
             return orders_t;
         }
+        /**
+        * This function is to save the order into system
+        * */
         public bool Save(Order order)
         {
             if(Datacon.execSQL("UPDATE tb_Order SET user_id ='"+order.UserID+"', order_state = '"+order.State+"', garment = '"+order.Garment+"' WHERE order_id ='"+order.ID+"';"))
@@ -276,7 +288,9 @@ namespace Laundry_Platypus
             return false;
 
         }
-
+        /**
+        * This function is to add the orders into system
+        * */
         public bool AddOrder(Order order)
         {
             order.State = "1";

@@ -31,6 +31,9 @@ namespace Laundry_Platypus
             get;
             set;
         }
+        /**
+        * This function is to initial the System_L object
+        * */
         private System_L(IHubConnectionContext<dynamic> clients)
         {
             Clients = clients;
@@ -57,10 +60,16 @@ namespace Laundry_Platypus
             controler = new Controler(_users, _orders);
             //System.Console.WriteLine("success");
         }
+        /**
+* This function is for clients to get all order from system and show them on page
+* */
         public IEnumerable<Order> GetAllOrders()
         {
             return _orders.Values;
         }
+        /**
+* This function is to get specific user from system
+* */
         public Person GetUser(string userid, string passwd)
         {
             Person person_t;
@@ -77,6 +86,9 @@ namespace Laundry_Platypus
             }
             return null;
         }
+        /**
+* This function is to update order detail into database and system
+* */
         public void UpdateOrder(Order order)
         {
             lock (_updateOrderLock)
@@ -91,6 +103,9 @@ namespace Laundry_Platypus
                 }
             }
         }
+        /**
+* This function is for clients to get all order from system and show them on page according to their account
+* */
         public IEnumerable<Order> GetAllOrders(Person person)
         {
             if (person.Roleid == "3")
@@ -133,6 +148,9 @@ namespace Laundry_Platypus
             }
             return null;
         }
+        /**
+* This function is to add order detail into database and system
+* */
         public bool AddOrder(Order order)
         {
             try
@@ -148,6 +166,9 @@ namespace Laundry_Platypus
             }
             return false;
         }
+        /**
+* This function is to get order detail from system and return their value
+* */
         public Order GetOrder(string order_id)
         {
             Order order=null;
@@ -180,6 +201,9 @@ namespace Laundry_Platypus
             return order;
 
         }
+        /**
+* This function is to distribute the order
+* */
         public bool Distribute(string order_id)
         {
             if (controler.Distruibute(order_id))
@@ -188,6 +212,9 @@ namespace Laundry_Platypus
             }
             return false;
         }
+        /**
+* This function is to save order detail into database and system
+* */
         public bool SaveOrder(Order order)
         {
             if (controler.Save(order))

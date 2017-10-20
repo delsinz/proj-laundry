@@ -6,15 +6,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
- 
+
 using System.Collections;
 using System.Configuration;
- 
- 
+
+
 using System.Web.Security;
- 
+
 using System.Web.UI.HtmlControls;
- 
+
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
@@ -25,19 +25,21 @@ namespace Laundry_Platypus
 {
     public partial class ManageItem : System.Web.UI.Page
     {
-       
+
         protected void Page_Load(object sender, EventArgs e)
         {
             DataSet myds3 = Datacon.getDataset("SELECT * FROM `tb_Garment_type` WHERE `activate` = 1;", "garment");
             DataList1.DataSource = myds3;
             DataList1.DataBind();
         }
+        /**
+        * This function is to Edit garment and save it into database
+        * */
+        protected void Save_Edit_Click(object sender, EventArgs e)
+        {
 
-        // Edit garment
-        protected void Save_Edit_Click(object sender, EventArgs e) {
-            
             //Response.Write("<script lanuage=javascript>alert(" + Hidden1.Value + ");window.location.href='ManageItem.aspx'</script>");
-          
+
             string get_item_id = null;
             get_item_id = Hidden1.Value;
             //Response.Write("<script lanuage=javascript>alert(" + get_item_id + ");window.location.href='ManageItem.aspx'</script>");
@@ -65,14 +67,17 @@ namespace Laundry_Platypus
                 Datacon.execSQL("UPDATE tb_Garment_type SET `type_name` = '" + NameTextBox.Text + "', `abbreviation` = '" + AbbrTextBox.Text + "' WHERE `garment_id` = " + get_item_id + "");
 
             }
-            else {
+            else
+            {
                 Response.Write("<script lanuage=javascript>alert('Please input required information');window.location.href='ManageItem.aspx'</script>");
             }
-             
+
             Page_Load(sender, e);
         }
 
-        // Add garment 
+        /**
+        * This function is to add garment  into database
+        * */
         protected void Add_Click(object sender, EventArgs e)
         {
             //Datacon.execSQL("INSERT INTO tb_Garment_type (type_name, abbreviation) VALUES ('Short','STS');");
@@ -81,7 +86,8 @@ namespace Laundry_Platypus
                 Datacon.execSQL("INSERT INTO tb_Garment_type (`type_name`,`abbreviation`,`activate`) VALUES ('" +
                     AddNameTextBox.Text + "','" + AddAbbrTextBox.Text + "', '1');");
             }
-            else {
+            else
+            {
                 Response.Write("<script lanuage=javascript>alert('Please input required information');window.location.href='ManageItem.aspx'</script>");
             }
 
@@ -105,13 +111,16 @@ namespace Laundry_Platypus
         //}
 
         //}
-
+        /**
+       * This function is to remove garment from database
+       * */
         protected void Save_Remove_Click(object sender, EventArgs e)
         {
             string get_item_id = null;
             get_item_id = Hidden1.Value;
             //Response.Write("<script lanuage=javascript>alert(" + Hidden1.Value + ");window.location.href='ManageItem.aspx'</script>");
-            if (get_item_id != null) {
+            if (get_item_id != null)
+            {
                 Datacon.execSQL("UPDATE `tb_Garment_type` SET `activate` = '0' WHERE `garment_id` = " + get_item_id + "");
             }
             Page_Load(sender, e);

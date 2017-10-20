@@ -28,6 +28,9 @@ namespace Laundry_Platypus
         public string UserID { get; set; }
         public string Garment { get; set; }
         public string Address { get; set; }
+        /**
+       * This function is to initial the object
+       * */
         public Order(string id, string state, string date, string customerID, string userID, string customerName, string stateName,string garment)
         {
             ID = id;
@@ -42,6 +45,9 @@ namespace Laundry_Platypus
             reader.Read();
             Address=reader["address"].ToString();
         }
+        /**
+       * This function is to initial the object
+       * */
         public Order(string id, string state, string date, string customerID, string userID, string garment)
         {
             ID = id;
@@ -55,6 +61,7 @@ namespace Laundry_Platypus
            
             Garment = garment;
             Address = reader["address"].ToString();
+
             reader = Datacon.getRow("SELECT * FROM tb_Order_state WHERE state_id ='" + State + "';");
             reader.Read();
             StateName = reader["state_name"].ToString(); ;

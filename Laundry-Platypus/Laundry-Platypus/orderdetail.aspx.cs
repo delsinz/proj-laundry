@@ -9,6 +9,9 @@ namespace Laundry_Platypus
 {
     public partial class orderdetail : System.Web.UI.Page
     {
+        /**
+       * This function is get the; order detail from database and show it on page
+       * */
         protected void Page_Load(object sender, EventArgs e)
         {
             string orderid = Request["orderid"];

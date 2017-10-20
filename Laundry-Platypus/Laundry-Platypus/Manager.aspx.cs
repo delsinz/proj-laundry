@@ -13,7 +13,9 @@ namespace Laundry_Platypus
         {
 
         }
-
+        /**
+       * This function is to redirect to addorder page
+       * */
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("AddOrder.aspx");

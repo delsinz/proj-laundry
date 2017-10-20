@@ -181,9 +181,7 @@
     <Content Include="css\root.css" />
     <Content Include="css\style.css" />
     <Content Include="dll\MySql.Data.dll" />
-    <Content Include="driverOrderMain.html" />
     <Content Include="DriverOverview.aspx" />
-    <Content Include="dropoffOrder.html" />
     <Content Include="Global.asax" />
     <Content Include="Common.Master" />
     <Content Include="js\jquery.min.js" />
@@ -212,18 +210,15 @@
     <Content Include="assets\vendor\linearicons\fonts\Linearicons-Free.woff2" />
     <Content Include="AddOrderDetail.aspx" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\Laundry-Platypus20171014034448 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
     <Content Include="ManageEmployee.aspx" />
     <Content Include="ManageItem.aspx" />
     <Content Include="Manager.aspx" />
     <Content Include="ManageSales.aspx" />
-    <Content Include="office-sidebar.html" />
     <Content Include="orderdetail.aspx" />
-    <Content Include="OrderDetail_d.aspx" />
     <Content Include="OrderDetail_p.aspx" />
-    <Content Include="Orderdetail_pp.aspx" />
     <Content Include="PackerOverview.aspx" />
-    <Content Include="pickupOrder.html" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -234,7 +229,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="style-sidebar.css" />
-    <Content Include="table.html" />
     <Content Include="ViewForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -285,26 +279,12 @@
     <Compile Include="orderdetail.aspx.designer.cs">
       <DependentUpon>orderdetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OrderDetail_d.aspx.cs">
-      <DependentUpon>OrderDetail_d.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OrderDetail_d.aspx.designer.cs">
-      <DependentUpon>OrderDetail_d.aspx</DependentUpon>
-    </Compile>
     <Compile Include="OrderDetail_p.aspx.cs">
       <DependentUpon>OrderDetail_p.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="OrderDetail_p.aspx.designer.cs">
       <DependentUpon>OrderDetail_p.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Orderdetail_pp.aspx.cs">
-      <DependentUpon>Orderdetail_pp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Orderdetail_pp.aspx.designer.cs">
-      <DependentUpon>Orderdetail_pp.aspx</DependentUpon>
     </Compile>
     <Compile Include="PackerOverview.aspx.cs">
       <DependentUpon>PackerOverview.aspx</DependentUpon>
@@ -341,10 +321,8 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
-    <Compile Include="Orderlist.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Response.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="System_L.cs" />
     <Compile Include="AddOrderDetail.aspx.cs">

@@ -11,6 +11,9 @@ namespace Laundry_Platypus
         public string Type_name { get; set; }
         public string Abbreviation { get; set; }
         public int Activate { get; set; }
+        /**
+        * This function is to initial the object
+        * */
         public Garment(string garmentID, string type_name, string abbreviation, int activate)
         {
             GarmentID = garmentID;

@@ -9,6 +9,9 @@ namespace Laundry_Platypus
 {
     public partial class Common : System.Web.UI.MasterPage
     {
+        /**
+        * This function is to redirect the pages according to users' role
+        * */
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["user_name"] != null)
@@ -32,7 +35,9 @@ namespace Laundry_Platypus
                 }
 
         }
-
+        /**
+        * This function is to log out the system and clear the session
+        * */
         protected void Button1_Click(object sender, EventArgs e)
         {
             Session.Clear();

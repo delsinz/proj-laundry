@@ -15,7 +15,10 @@ namespace Laundry_Platypus
         {
 
         }
-
+        /**
+        * This function is to check the username and password whether correct and redirect to different pages
+        * according to different role
+        * */
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (username.Text == "" || passwd.Text == "")

@@ -15,20 +15,26 @@ namespace Laundry_Platypus
         public string Selfie { get; set; }
         public string Passwd { get; set; }
         public string Roleid { get; set; }
-        public Person(string id,string name, string contact,string active,string selfie, string passwd, string roleid)
+        /**
+       * This function is to initial the object
+       * */
+        public Person(string id, string name, string contact, string active, string selfie, string passwd, string roleid)
         {
-            ID=id;
+            ID = id;
             Name = name;
             Contact = contact;
             Active = active;
             Selfie = selfie;
             Roleid = roleid;
             Passwd = passwd;
-            
+
         }
     }
-    public class Producer:Person
+    public class Producer : Person
     {
+        /**
+       * This function is to initial the object
+       * */
         public Producer(string id, string name, string contact, string active, string selfie, string passwd, string roleid) : base(id, name, contact, active, selfie, passwd, roleid)
         {
             ID = id;
@@ -48,7 +54,9 @@ namespace Laundry_Platypus
     {
         public List<Order> pickup_list = new List<Order>();
         public List<Order> dropoff_list = new List<Order>();
-
+        /**
+       * This function is to initial the object
+       * */
         public Driver(string id, string name, string contact, string active, string selfie, string passwd, string roleid) : base(id, name, contact, active, selfie, passwd, roleid)
         {
             OrderNumber = 0;
@@ -60,7 +68,9 @@ namespace Laundry_Platypus
             Roleid = roleid;
             Passwd = passwd;
         }
-
+        /**
+       * This function is to get specific order from packing list
+       * */
         public Order getOrder_p(string ID)
         {
             foreach (Order order in pickup_list)
@@ -72,6 +82,9 @@ namespace Laundry_Platypus
             }
             return null;
         }
+        /**
+       * This function is to remove specific order from droping list
+       * */
         public bool rmOrder_d(string ID)
         {
             foreach (Order order in dropoff_list)
@@ -84,6 +97,9 @@ namespace Laundry_Platypus
             }
             return false;
         }
+        /**
+       * This function is to remove specific order from packing list
+       * */
         public bool rmOrder_p(string ID)
         {
             foreach (Order order in pickup_list)
@@ -96,11 +112,17 @@ namespace Laundry_Platypus
             }
             return false;
         }
+        /**
+       * This function is to get all orders from packing list
+       * */
         public List<Order> getOrder_p()
         {
-            
+
             return pickup_list;
         }
+        /**
+       * This function is to get specific order from droping list
+       * */
         public Order getOrder_d(string ID)
         {
             foreach (Order order in dropoff_list)
@@ -112,16 +134,25 @@ namespace Laundry_Platypus
             }
             return null;
         }
+        /**
+       * This function is to get specific order from droping list
+       * */
         public List<Order> getOrder_d()
         {
             return dropoff_list;
         }
+        /**
+       * This function is to add specific order to packing list
+       * */
         public int addOrder_p(Order order)
         {
             OrderNumber = OrderNumber + 1;
             pickup_list.Add(order);
             return pickup_list.Count;
         }
+        /**
+      * This function is to add specific order to droping list
+      * */
         public int addOrder_d(Order order)
         {
             OrderNumber = OrderNumber + 1;
@@ -134,7 +165,7 @@ namespace Laundry_Platypus
             {
                 if (order_t.ID == order.ID)
                 {
-                    int index=pickup_list.IndexOf(order_t);
+                    int index = pickup_list.IndexOf(order_t);
                     // change the order_t's attribute
                     pickup_list[index] = order;
                     return true;
@@ -157,7 +188,9 @@ namespace Laundry_Platypus
     {
         public List<Order> pickup_list = new List<Order>();
         public List<Order> dropoff_list = new List<Order>();
-
+        /**
+      * This function is to initial the object
+      * */
         public Packer(string id, string name, string contact, string active, string selfie, string passwd, string roleid) : base(id, name, contact, active, selfie, passwd, roleid)
         {
             OrderNumber = 0;
@@ -169,7 +202,9 @@ namespace Laundry_Platypus
             Roleid = roleid;
             Passwd = passwd;
         }
-
+        /**
+      * This function is to get specific order from packing list
+      * */
         public Order getOrder_p(string ID)
         {
             foreach (Order order in pickup_list)
@@ -181,6 +216,9 @@ namespace Laundry_Platypus
             }
             return null;
         }
+        /**
+* This function is to remove specific order from packing order list
+* */
         public bool rmOrder_p(string ID)
         {
             foreach (Order order in pickup_list)
@@ -193,11 +231,17 @@ namespace Laundry_Platypus
             }
             return false;
         }
+        /**
+   * This function is to get specific order from packing list
+   * */
         public List<Order> getOrder_p()
         {
 
             return pickup_list;
         }
+        /**
+    * This function is to get specific order from droping list
+    * */
         public Order getOrder_d(string ID)
         {
             foreach (Order order in dropoff_list)
@@ -209,6 +253,9 @@ namespace Laundry_Platypus
             }
             return null;
         }
+        /**
+  * This function is to remove specific order from droping list
+  * */
         public bool rmOrder_d(string ID)
         {
             foreach (Order order in dropoff_list)
@@ -221,22 +268,34 @@ namespace Laundry_Platypus
             }
             return false;
         }
+        /**
+    * This function is to get all order from droping list
+    * */
         public List<Order> getOrder_d()
         {
             return dropoff_list;
         }
+        /**
+  * This function is to add specific order to packing list
+  * */
         public int addOrder_p(Order order)
         {
             OrderNumber++;
             pickup_list.Add(order);
             return pickup_list.Count;
         }
+        /**
+  * This function is to add specific order to droping list
+  * */
         public int addOrder_d(Order order)
         {
             OrderNumber++;
             dropoff_list.Add(order);
             return pickup_list.Count;
         }
+        /**
+  * This function is to set specific order to order list
+  * */
         public bool setOrder(Order order)
         {
             foreach (Order order_t in pickup_list)
@@ -251,6 +310,9 @@ namespace Laundry_Platypus
             }
             return false;
         }
+        /**
+* This function is to set all order to order list
+* */
         public void setOrder(Order[] order)
         {
             pickup_list.Clear();

@@ -13,6 +13,9 @@ namespace Laundry_Platypus
         //public static string Conn_string = "Database='laundry';Data Source='35.190.155.225:3306';User Id='testuser';Password='laundry123456';charset='utf8';pooling=true";
         static string connStr = "Server=127.0.0.1;Database=laundry;Uid=testuser;Pwd=laundry123456;CharSet=utf8;";
         //static MySqlConnection con;
+        /**
+        * This function is to execute the qurery and return the result 
+        * */
         public static bool execSQL(string sql)
         {
             MySqlConnection con = createCon();
@@ -44,6 +47,9 @@ namespace Laundry_Platypus
             }
 
         }
+        /**
+        * This function is to execute the qurery and return the result 
+        * */
         //Check the record is exited
         public static int seleSQL(string sql)
         {
@@ -63,6 +69,9 @@ namespace Laundry_Platypus
 
 
         }
+        /**
+        * This function is to return all the records about the qurery 
+        * */
         //return all the records
         public static DataSet getDataset(string sql, string table)
         {
@@ -79,6 +88,9 @@ namespace Laundry_Platypus
 
 
         }
+        /**
+        * This function is to return the first record of qurery 
+        * */
         //return a record
         public static MySqlDataReader getRow(string sql)
         {
@@ -89,7 +101,9 @@ namespace Laundry_Platypus
 
 
         }
-
+        /**
+        * This function is to open a connection between MySQL and web application 
+        * */
         public static MySqlConnection createCon()
         {
             con = new MySqlConnection(connStr);

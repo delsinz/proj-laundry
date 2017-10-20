@@ -16,6 +16,9 @@ namespace Laundry_Platypus
             DataList1.DataSource = myds4;
             DataList1.DataBind();
         }
+        /**
+        * This function is to save the information that have changed about Employee to the database
+        * */
         protected void Save_Edit_Click(object sender, EventArgs e)
         {
             string get_user_id = null;
@@ -31,6 +34,9 @@ namespace Laundry_Platypus
             }
             Page_Load(sender, e);
         }
+        /**
+        * This function is to add new users to database
+        * */
         protected void Add_Click(object sender, EventArgs e)
         {
             
@@ -49,7 +55,9 @@ namespace Laundry_Platypus
 
             Page_Load(sender, e);
         }
-
+        /**
+        * This function is to inactive the users 
+        * */
         protected void Save_Inactive_Click(object sender, EventArgs e)
         {
             string get_user_id = null;
@@ -61,7 +69,9 @@ namespace Laundry_Platypus
             }
             Page_Load(sender, e);
         }
-
+        /**
+        * This function is to active the user 
+        * */
         protected void Save_Active_Click(object sender, EventArgs e)
         {
             string get_user_id = null;

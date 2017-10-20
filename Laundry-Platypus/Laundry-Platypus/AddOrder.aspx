@@ -21,7 +21,7 @@
     </div>
     <div class="input-group">
         <span class="input-group-addon" id="basic-addon2">Pick Up Date</span>
-        <asp:TextBox ID="date" runat="server" type="date" class="form-control" placeholder="yyyy-mm-dd"  aria-describedby="basic-addon2" lang="en"></asp:TextBox>
+        <asp:TextBox ID="date" runat="server"  type="date" class="form-control" placeholder="yyyy-mm-dd"  aria-describedby="basic-addon2" lang="en"></asp:TextBox>
     </div>
     
     

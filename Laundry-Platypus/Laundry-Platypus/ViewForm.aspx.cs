@@ -14,6 +14,9 @@ namespace Laundry_Platypus
     {
         string customer_id=null;
         DataSet ds1;
+        /**
+* This function is to initial this page
+* */
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
@@ -57,6 +60,9 @@ namespace Laundry_Platypus
                 }
             }
         }
+        /**
+* This function is to select the order according to date and custumer
+* */
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (datebegin.Text != null && dateend.Text != null)
@@ -76,6 +82,9 @@ namespace Laundry_Platypus
                 }
             }
         }
+        /**
+* This function is to generate and export the csv file for client to import into MYOB program
+* */
         protected void Button2_Click(object sender, EventArgs e)
         {
             
@@ -93,7 +102,9 @@ namespace Laundry_Platypus
             Response.Write(sw);
             Response.End();
         }
-
+        /**
+* This function is to generate and export the csv file for client to import into MYOB program
+* */
         protected void Button2_Click1(object sender, EventArgs e)
         {
 

@@ -13,6 +13,9 @@ namespace Laundry_Platypus
     {
         string orderid=null;
         Order order = null;
+        /**
+       * This function is to initial the page
+       * */
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -56,7 +59,9 @@ namespace Laundry_Platypus
             }
 
         }
-
+        /**
+       * This function is to update the state of order and distribute them by using the system
+       * */
         protected void Button1_Click(object sender, EventArgs e)
         {
             string garment=null;
@@ -106,7 +111,9 @@ namespace Laundry_Platypus
                 }
             }
         }
-
+        /**
+       * This function is to redirect the pages according to different role id for the back button
+       * */
         protected void Button2_Click(object sender, EventArgs e)
         {
             if (Session["role_id"].ToString() == "1")
